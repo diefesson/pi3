@@ -6,17 +6,17 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Happy Pet</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style/home-style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/style-home.css'>
 </head>
 
 <body>
     <!-- Topbar -->
-    <div class="topbar background-primary">
+    <div class="topbar">
         <div>
             <span class="topbar-brand">HAPPY PET</span>
         </div>
         <div>
-            <button class="button-sign button-sign-in">SIGN IN</button>
+            <button id="showSignInButton" class="button-sign button-sign-in">SIGN IN</button>
             <button class="button-sign button-sign-up">SIGN UP</button>
         </div>
     </div>
@@ -50,7 +50,33 @@
         </div>
     </div>
 
-    <script src='script/home-script.js'></script>
+    <div id="signInContainer" class="sign-in-container hidden">
+        <div class="sign-in-modal">
+            <div class="sign-in-top">
+                <span>Sign in</span>
+            </div>
+            <div class="sign-in-middle">
+                <div class="sign-in-field">
+                    <span>ONG ID</span>
+                    <input id="oidInput" type="text" />
+                </div>
+                <div class="sign-in-field">
+                    <span>USER ID</span>
+                    <input id="uidInput" type="text" />
+                </div>
+                <div class="sign-in-field">
+                    <span>PASSWORD</span>
+                    <input id="passwordInput" type="password" />
+                </div>
+            </div>
+            <div class="sign-in-bottom">
+                <button class="button-sign button-sign-in">SIGN IN</button>
+                <label id="signInStatusLabel"></label>
+            </div>
+        </div>
+    </div>
+
+    <script src='script/script-home.js'></script>
 </body>
 
 </html>
