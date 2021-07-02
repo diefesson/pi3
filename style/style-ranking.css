@@ -8,7 +8,6 @@
     display: flex;
     margin: auto;
     background-color: #E5E5E5;
-    width: 100%;
     height: 100%;
 }
 
@@ -21,10 +20,15 @@
     margin-bottom: 40px;
 }
 
+#title-ranking{
+    margin-right: 10px;
+}
+
 .text-column{
     color: #1F1C21;
+    position: absolute;
     font-size: 22px;
-    margin-top: -40px;
+    margin-bottom: 55%;
     margin-left: 40%;
 }
 
@@ -35,20 +39,35 @@
     background-color: #21295C;
     color: #FFFFFF;
     width: 32%;
-    height: 80vh;
-    overflow-y: scroll;
+    height: 100%;
 }
 
 .first{
     display: flex;
+    position: relative;
     align-items: center;
     border-bottom: 1px solid #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.first:hover{
+    background-color: rgba(11, 10, 15, 0.6);
+    cursor: pointer;
 }
 
 .others-positions{
     display: flex;
+    position: relative;
     align-items: center;
     border-bottom: 1px solid #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.others-positions:hover{
+    background-color: rgba(11, 10, 15, 0.4);
+    cursor: pointer;
 }
 
 .ong-image{
@@ -63,14 +82,9 @@
     font-weight: 700;
 }
 
-.first-position{
-    margin-left: 29%;
-    margin-bottom: 10%;
-    position: absolute;
-}
-
 .positions{
-    margin-left: 29%;
-    margin-bottom: 4%;
+    margin-right: 7px;
+    top: 0;
+    right: 0;
     position: absolute;
 }
