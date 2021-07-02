@@ -20,7 +20,7 @@
     --color-white-text-60: #FFFFFF99;
     --color-white-text-40: #FFFFFF66;
     /* Status colors*/
-    --color-status-processing: #AEAEAE;
+    --color-status-info: #AEAEAE;
     --color-status-success: #3BB710;
     --color-status-alert: #E3E721;
     --color-status-error: #FF3B46;
@@ -44,8 +44,8 @@ body {
 
 /* Status colors */
 
-.text-processing{
-    color: var(--color-status-processing)
+.text-info{
+    color: var(--color-status-info)
 }
 
 .text-success{
@@ -60,8 +60,8 @@ body {
     color: var(--color-status-error)
 }
 
-.background-processing{
-    background-color: var(--color-status-processing)
+.background-info{
+    background-color: var(--color-status-info)
 }
 
 .background-success{
@@ -248,6 +248,7 @@ body {
 
 .sign-in-bottom{
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -294,4 +295,9 @@ body {
 .sign-in-field input:focus{
     border-bottom-color: var(--color-primary);
     transition-duration: var(--transition-duration-field-color);
+}
+
+.sign-in-status{
+    font-size: 14px;
+    font-family: var(--font-body);
 }
