@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style-pet-add.css">
+    <title>Adicionar PET</title>
+</head>    
+
+<body>
+    <header class="topbar">
+        <div>
+            <span class="topbar-brand">HAPPY PET</span>
+        </div>
+        <div>
+            <button id="showSignInButton" class="button-sign button-sign-in" onclick="fazerLogout()">SIGN OUT</button>
+        </div>
+    </header>
+
+    <main class="content-add-pet">
+        <section class="square">
+            <div class="titulo">
+                <h2 class="titulo-cadastro">Cadastrar PET</h2>
+            </div>
+
+            <form class="formulario" name="formuser">
+                <fieldset class="dados-iniciais">
+                    <label for="titulo" class="info-pet">Título:</label>
+                    <input type="text" name="titulo" id="titulo" class="input-padrao" required>
+                    <label for="raca info-pet" name="raca" class="info-pet">Raça:</label>
+                    <input type="text" name="raca" id="raca" class="input-padrao" required>
+                </fieldset>
+                <div class="campos-selecionar">
+                    <div class="item-selecionar">
+                        <label class="info-pet">Sexo:</label>
+                        <select id="sexo" class="selecionar-opcao" required>
+                            <option selected disabled value="">Selecione</option>
+                            <option>Fêmea</option>
+                            <option>Macho</option>
+                        </select>
+                    </div>
+                     
+                    <div class="item-selecionar">
+                        <label class="info-pet">Idade:</label>
+                        <select id="idade" class="selecionar-opcao" required>
+                            <option selected disabled value="">Selecione</option>
+                            <option>Adulto</option>
+                            <option>Filhote</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="info-pet">Descrição:</label>
+                    <textarea name="descricao" id="descricao" class="descricao"></textarea>
+                </div>
+
+                <div>
+                    <label class="info-pet">Imagens:</label>
+                    <label for="imagem" class="botao-carregar">Carregar imagem</label>
+                    <input type="file" multiple accept=".jpg, .png, .gif, .jpeg " id="imagem" required class="carregar-imagem">
+                </div>
+                
+                <div class="cadastrar">
+                    <input type="submit" value="CADASTRAR PET" class="botao-cadastrar">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./script/script-pet-add.js"></script>
+</body>
+
+</html>
