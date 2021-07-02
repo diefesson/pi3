@@ -71,30 +71,37 @@
 }
 
 .colunmn{
+    padding-top: 10px;
     display: grid;
-    grid-template-rows: 160px 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr 1fr;
     margin: auto;
-    background-color: #21295C;
-    color: #FFFFFF;
     width: 96%;
     height: 100%;
+    gap: 10px;
 }
 
 .ranking-ong{
     display: flex;
     position: relative;
+    gap: 15px;
     align-items: center;
-    border-bottom: 1px solid #FFFFFF;
     font-size: 14px;
     font-weight: 500;
+    background-color: var(--color-background-surface);
+    border-radius: 20px;
+    padding: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    box-sizing: border-box;
 }
 
 .ranking-ong:hover{
-    background-color: rgba(11, 10, 15, 0.6);
     cursor: pointer;
+    border-color: var(--color-primary);
 }
 
 .ranking-ong.first{
+    height: 160px;
     font-size: 18px;
     font-weight: 700;
 }
@@ -112,7 +119,7 @@
     height: 60px;
 }
 
-.text-ongs{
+.ranking-ong-text{
     line-height: 10px;
     margin-top: 15px;
     font-weight: 700;
