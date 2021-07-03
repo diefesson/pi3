@@ -4,36 +4,50 @@ const expectedCredentials = {
     password: "12345678"
 }
 
-var oidInput
-var uidInput
-var passwordInput
-var signInStatusLabel
-var showSignInButton
-var signInContainer
-var signInButton
+const binding = {
+    oidInput,
+    uidInput,
+    passwordInput,
+    signInStatusLabel,
+    showSignInButton,
+    signInContainer,
+    signInButton,
+    openSidebarButton,
+    closeSidebarButton,
+    sidebar
+}
 
 onload = function (e) {
-    oidInput = document.getElementById("oidInput")
-    uidInput = document.getElementById("uidInput")
-    passwordInput = document.getElementById("passwordInput")
-    signInStatusLabel = document.getElementById("signInStatusLabel")
-    showSignInButton = document.getElementById("showSignInButton")
-    signInContainer = document.getElementById("signInContainer")
-    signInButton = document.getElementById("signInButton")
+    binding.oidInput = document.getElementById("oidInput")
+    binding.uidInput = document.getElementById("uidInput")
+    binding.passwordInput = document.getElementById("passwordInput")
+    binding.signInStatusLabel = document.getElementById("signInStatusLabel")
+    binding.showSignInButton = document.getElementById("showSignInButton")
+    binding.signInContainer = document.getElementById("signInContainer")
+    binding.signInButton = document.getElementById("signInButton")
+    binding.openSidebarButton = document.getElementById("openSidebarButton")
+    binding.closeSidebarButton = document.getElementById("closeSidebarButton")
+    binding.sidebar = document.getElementById("sidebar")
     initViews()
 }
 
 function initViews() {
-    showSignInButton.addEventListener("click", (event) => {
-        signInContainer.classList.remove("hidden")
+    binding.showSignInButton.addEventListener("click", (event) => {
+        binding.signInContainer.classList.remove("hidden")
     })
-    signInContainer.addEventListener("click", (event) => {
+    binding.signInContainer.addEventListener("click", (event) => {
         if (event.target == signInContainer) {
-            signInContainer.classList.add("hidden")
+            binding.signInContainer.classList.add("hidden")
         }
     })
-    signInButton.addEventListener("click", () => {
+    binding.signInButton.addEventListener("click", () => {
         signIn()
+    })
+    binding.openSidebarButton.addEventListener("click", ()=>{
+        binding.sidebar.classList.remove("hidden")
+    })
+    binding.closeSidebarButton.addEventListener("click", ()=>{
+        binding.sidebar.classList.add("hidden")
     })
 }
 
@@ -83,9 +97,9 @@ function setTextStatusClass(element, status) {
 
 function getCredentials() {
     return {
-        oid: oidInput.value,
-        uid: uidInput.value,
-        password: passwordInput.value
+        oid: binding.oidInput.value,
+        uid: binding.uidInput.value,
+        password: binding.passwordInput.value
     }
 }
 
@@ -121,25 +135,25 @@ async function signInCoroutine() {
     var error = verifyCredentials(credentials)
 
     if (error != null) {
-        signInStatusLabel.innerText = error.message
-        setTextStatusClass(signInStatusLabel, error.status)
+        binding.signInStatusLabel.innerText = error.message
+        setTextStatusClass(binding.signInStatusLabel, error.status)
         return
     }
 
     signInStatusLabel.innerText = "Signing in..."
-    setTextStatusClass(signInStatusLabel, Status.INFO)
+    setTextStatusClass(binding.signInStatusLabel, Status.INFO)
     await sleep(2000)
     error = auth(credentials)
     if (error != null) {
-        signInStatusLabel.innerText = error.message
-        setTextStatusClass(signInStatusLabel, error.status)
+        binding.signInStatusLabel.innerText = error.message
+        setTextStatusClass(binding.signInStatusLabel, error.status)
         return
     }
 
     signInStatusLabel.innerText = "Success"
     setTextStatusClass(signInStatusLabel, Status.SUCCESS)
-    toLocalStorage("oid", oidInput.value)
-    toLocalStorage("uid", uidInput.value)
+    toLocalStorage("oid", binding.oidInput.value)
+    toLocalStorage("uid", binding.uidInput.value)
     await sleep(1000)
     window.location.assign("employer-home.html")
 }
