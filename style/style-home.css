@@ -45,6 +45,11 @@ body {
     background-color: var(--color-background-secondary);
 }
 
+a, a:hover, a:active{
+    color: inherit;
+    text-decoration: inherit;
+}
+
 /* Status colors */
 
 .text-info {
