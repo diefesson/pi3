@@ -171,6 +171,7 @@
     background-color: var(--color-primary);
     text-align: center;
     border-width: 0px;
+    margin: space-between;
 }
 
 .button-sign-up {
