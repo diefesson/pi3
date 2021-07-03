@@ -52,6 +52,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: var(--color-white-text-100);
+    cursor: pointer;
 }
 
 .button-sign {
@@ -92,9 +93,14 @@ fieldset {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
+.titulo {
+    padding: 2rem 0;
+}
+
 .titulo-cadastro {
     font-family: var(--font-body);
-    font-size: 2.25rem;
+    font-weight: 700;
+    font-size: 2.50rem;
 }
 
 .formulario {
@@ -282,5 +288,10 @@ fieldset {
 
     .carregar-imagem {
         display: none;
+    }
+
+    .botao-cadastrar {
+        font-size: 1rem;
+        width: 12rem;
     }
 }

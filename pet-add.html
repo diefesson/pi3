@@ -12,22 +12,22 @@
 <body>
     <header class="topbar">
         <div>
-            <span class="topbar-brand">HAPPY PET</span>
+            <span class="topbar-brand" onclick="irParaMain()">HAPPY PET</span>
         </div>
         <div>
-            <button id="showSignInButton" class="button-sign button-sign-in" onclick="fazerLogout()">SIGN OUT</button>
+            <button id="showSignInButton" class="button-sign button-sign-in" onclick="irParaMain()">Sign Out</button>
         </div>
     </header>
 
     <main class="content-add-pet">
         <section class="square">
             <div class="titulo">
-                <h2 class="titulo-cadastro">Cadastrar PET</h2>
+                <span class="titulo-cadastro">Cadastrar PET</span>
             </div>
 
-            <form class="formulario" name="formuser">
+            <form class="formulario" action="employer-home.html" action="employer-home.html" method="POST" name="formuser">
                 <fieldset class="dados-iniciais">
-                    <label for="titulo" class="info-pet">Título:</label>
+                    <label for="titulo" class="info-pet" name="titulo">Título:</label>
                     <input type="text" name="titulo" id="titulo" class="input-padrao" required>
                     <label for="raca info-pet" name="raca" class="info-pet">Raça:</label>
                     <input type="text" name="raca" id="raca" class="input-padrao" required>
