@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Happy Pet</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/style-home.css'>
+</head>
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-content">
+            <span id="openSidebarButton" class="button-open-sidebar"></span>
+            <span class="topbar-brand">HAPPY PET</span>
+        </div>
+        <div class="topbar-content">
+            <button id="showSignInButton" class="button-sign button-sign-in">Sign in</button>
+            <button class="button-sign button-sign-up">Sign up</button>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar hidden">
+            <div class="sidebar-top">
+                <span>HOME</span>
+                <span id="closeSidebarButton" class="sidebar-close"></span>
+            </div>
+            <div class="sidebar-content">
+                <a href="ranking.html"><span>Ranking</span></a>
+                <span>Descubra</span>
+                <span>Compartilhe</span>
+            </div>
+            <div class="sidebar-bottom">
+                <span>The DiViLipes Developers - 2021</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page content-->
+    <div class="page-content">
+        <div class="feed">
+            <!-- Post 1-->
+            <div class="post">
+                <div class="post-top">
+                    <img class="post-top-image" src="image/ong.png">
+                    <span>Test ONG</span>
+                </div>
+                <img class="post-middle" src="image/cat-1.jpg" />
+                <div class="post-bottom">
+                    SHARE
+                </div>
+            </div>
+
+            <!-- Post 2-->
+            <div class="post">
+                <div class="post-top">
+                    <img class="post-top-image" src="image/ong.png">
+                    <span>Test ONG</span>
+                </div>
+                <img class="post-middle" src="image/cat-2.jpg" />
+                <div class="post-bottom">
+                    SHARE
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="signInContainer" class="sign-in-container hidden">
+        <div class="sign-in-modal">
+            <div class="sign-in-top">
+                <span>Sign in</span>
+            </div>
+            <div class="sign-in-middle">
+                <div class="sign-in-field">
+                    <span>ONG ID</span>
+                    <input id="oidInput" type="text" />
+                </div>
+                <div class="sign-in-field">
+                    <span>USER ID</span>
+                    <input id="uidInput" type="text" />
+                </div>
+                <div class="sign-in-field">
+                    <span>PASSWORD</span>
+                    <input id="passwordInput" type="password" />
+                </div>
+            </div>
+            <div class="sign-in-bottom">
+                <button id="signInButton" class="button-sign button-sign-in">Sign in</button>
+                <label id="signInStatusLabel" class="sign-in-status"></label>
+            </div>
+        </div>
+    </div>
+
+    <script src='script/script-home.js'></script>
+</body>
+
+</html>
