@@ -1,3 +1,88 @@
+:root {
+    /* Brand colors */
+    --color-primary: #0076F5;
+    --color-secondary: #23D7FB;
+    /* Background colors */
+    --color-background-primary: #21295C;
+    --color-background-secondary: #F5F5F5;
+    --color-background-surface: #FFFFFF;
+    /* Text colors */
+    --color-dark-text-100: #1F1C21FF;
+    --color-dark-text-80: #1F1C21CC;
+    --color-dark-text-60: #1F1C2199;
+    --color-dark-text-40: #1F1C2166;
+    /* Text colors */
+    --color-white-text-100: #FFFFFFFF;
+    --color-white-text-80: #FFFFFFCC;
+    --color-white-text-60: #FFFFFF99;
+    --color-white-text-40: #FFFFFF66;
+    /* Fonts */
+    --font-headline: Arial, Helvetica, sans-serif;
+    --font-body: Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    background-color: var(--color-background-secondary);
+}
+
+/* Coloring */
+
+.background-primary {
+    background-color: var(--color-background-primary);
+}
+
+/* Layout - topbar */
+
+.topbar {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 59px;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.topbar-brand {
+    font-family: var(--font-headline);
+    /* TODO: change me */
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-white-text-100);
+}
+
+.button-sign {
+    font-family: var(--font-headline);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-white-text-100);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.button-sign-in {
+    padding: 10px;
+    background-color: var(--color-primary);
+    text-align: center;
+    border-width: 0px;
+}
+
+.button-sign-up {
+    padding: 8px;
+    background-color: transparent;
+    border-color: var(--color-primary);
+    border-width: 2px;
+    border-style: solid;
+}
 *{
     margin: 0;
     padding: 0;
@@ -61,7 +146,7 @@
     width: 10px;
     height: 10px;
     padding: 3px;
-    background-color: #17FB2E;
+    background-color: #3BB710;
     border-radius: 50%;
     display: inline-block;
 }
