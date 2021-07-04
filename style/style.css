@@ -106,6 +106,17 @@ a, a:hover, a:active {
     align-items: center;
 }
 
+.topbar-content span{
+    white-space: nowrap;
+    color: var(--color-white-text-100);
+    font-family: var(--font-headline);
+    font-size: 18px;
+}
+
+.topbar-content span.hidden{
+    display: none;
+}
+
 .topbar-brand {
     font-family: var(--font-headline);
     font-size: 24px;
@@ -147,11 +158,16 @@ a, a:hover, a:active {
     align-items: center;
     padding-left: 10px;
     padding-right: 20px;
+
+    box-sizing: border-box;
+}
+
+.sidebar-top span{
+    white-space: nowrap;
     font-family: var(--font-headline);
     font-weight: 700;
     font-size: 24px;
     color: var(--color-white-text-100);
-    box-sizing: border-box;
 }
 
 .sidebar-close {
@@ -186,11 +202,15 @@ a, a:hover, a:active {
     flex-direction: column;
     gap: 10px;
     height: 100%;
+    padding: 10px;
+}
+
+.sidebar-content span {
+    white-space: nowrap;
     font-family: var(--font-headline);
     font-size: 24px;
     font-weight: 700;
     color: var(--color-dark-text-80);
-    padding: 10px;
 }
 
 .sidebar-bottom {

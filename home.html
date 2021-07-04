@@ -18,6 +18,7 @@
             <span class="topbar-brand">HAPPY PET</span>
         </div>
         <div class="topbar-content">
+            <span id="usernameSpan" class="hidden"></span>
             <button id="showSignInButton" class="button-sign button-sign-in hidden">Sign in</button>
             <button id="signOutButton" class="button-sign button-sign-out hidden">Sign out</button>
         </div>
@@ -30,6 +31,8 @@
             <span id="closeSidebarButton" class="sidebar-close"></span>
         </div>
         <div class="sidebar-content">
+            <a href="home.html"><span>Home</span></a>
+            <a href="employer-home.html"><span>Employer</span></a>
             <a href="ranking.html"><span>Ranking</span></a>
             <span>Descubra</span>
             <span>Compartilhe</span>
@@ -69,6 +72,8 @@
         </div>
     </div>
 
+    <!-- Sign in modal -->
+    <!-- TODO: update to create reusable modal styles -->
     <div id="signInContainer" class="sign-in-container hidden">
         <div class="sign-in-modal">
             <div class="sign-in-top">

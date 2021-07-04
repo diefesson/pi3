@@ -25,7 +25,7 @@ function makeError(message, status) {
     }
 }
 
-function redirectUnsiggned(){
+function redirectUnsigned(){
     if(localStorage.getItem("oid") == null){
         window.location.assign("home.html")
     }
@@ -72,7 +72,8 @@ const binding = {
     openSidebarButton: null,
     closeSidebarButton: null,
     sidebar: null,
-    signOutButton: null
+    signOutButton: null,
+    usernameSpan: null
 }
 
 function loadListener() {
@@ -87,6 +88,7 @@ function loadListener() {
     binding.closeSidebarButton = document.getElementById("closeSidebarButton")
     binding.sidebar = document.getElementById("sidebar")
     binding.signOutButton = document.getElementById("signOutButton")
+    binding.usernameSpan = document.getElementById("usernameSpan")
     initViews()
 }
 
@@ -99,10 +101,10 @@ function initViews() {
     binding.signOutButton.addEventListener("click", () => {
         localStorage.removeItem("oid")
         localStorage.removeItem("uid")
-        window.location.assign("home.html")
+        window.location.reload()
     })
     //TODO: update this functionality when a proper backend and component framework be present
-    if (window.location.href.endsWith("home.html")) {
+    if (window.location.href.endsWith("/home.html")) {
         binding.signInContainer.addEventListener("click", (event) => {
             if (event.target == signInContainer) {
                 binding.signInContainer.classList.add("hidden")
@@ -119,20 +121,24 @@ function initViews() {
         binding.sidebar.classList.add("hidden")
     })
     if (localStorage.getItem("oid") == null) {
-        showSignInButton()
+        showUnsignedTopbar()
     } else {
-        showSignOutButton()
+        showSignedTopbar()
     }
 }
 
-function showSignInButton() {
+function showUnsignedTopbar() {
     binding.showSignInButton.classList.remove("hidden")
     binding.signOutButton.classList.add("hidden")
+    binding.usernameSpan.classList.add("hidden")
+
 }
 
-function showSignOutButton() {
+function showSignedTopbar() {
     binding.showSignInButton.classList.add("hidden")
     binding.signOutButton.classList.remove("hidden")
+    binding.usernameSpan.classList.remove("hidden")
+    binding.usernameSpan.innerText = localStorage.getItem("uid")
 }
 
 /* Sign in */

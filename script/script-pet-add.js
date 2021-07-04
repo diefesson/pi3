@@ -1,1 +1,1 @@
-window.addEventListener("load", redirectUnsiggned)
+window.addEventListener("load", redirectUnsigned)
