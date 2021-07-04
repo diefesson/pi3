@@ -1,3 +1,1 @@
-function irParaMain () {
-    window.location.href = "home.html";
-}
+window.addEventListener("load", redirectUnsigned)

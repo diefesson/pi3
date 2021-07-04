@@ -5,27 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style-pet-add.css">
     <title>Adicionar PET</title>
-</head>    
+</head>
 
 <body>
-    <header class="topbar">
-        <div>
-            <span class="topbar-brand" onclick="irParaMain()">HAPPY PET</span>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-content">
+            <span id="openSidebarButton" class="sidebar-open"></span>
+            <span class="topbar-brand">HAPPY PET</span>
         </div>
-        <div>
-            <button id="showSignInButton" class="button-sign button-sign-in" onclick="irParaMain()">Sign Out</button>
+        <div class="topbar-content">
+            <span id="usernameSpan" class="hidden"></span>
+            <button id="showSignInButton" class="button-sign button-sign-in hidden">Sign in</button>
+            <button id="signOutButton" class="button-sign button-sign-out hidden">Sign out</button>
         </div>
-    </header>
+    </div>
 
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-top">
+            <span>ADD PET</span>
+            <span id="closeSidebarButton" class="sidebar-close"></span>
+        </div>
+        <div class="sidebar-content">
+            <a href="home.html"><span>Home</span></a>
+            <a href="employer-home.html"><span>Employer</span></a>
+            <a href="ranking.html"><span>Ranking</span></a>
+            <span>Descubra</span>
+            <span>Compartilhe</span>
+        </div>
+        <div class="sidebar-bottom">
+            <span>The DiViLipes Developers - 2021</span>
+        </div>
+    </div>
+    </div>
+
+    <!-- Page content -->
     <main class="content-add-pet">
         <section class="square">
             <div class="titulo">
                 <span class="titulo-cadastro">Cadastrar PET</span>
             </div>
 
-            <form class="formulario" action="employer-home.html" action="employer-home.html" method="POST" name="formuser">
+            <form class="formulario" action="employer-home.html" action="employer-home.html" method="POST"
+                name="formuser">
                 <fieldset class="dados-iniciais">
                     <label for="titulo" class="info-pet" name="titulo">Título:</label>
                     <input type="text" name="titulo" id="titulo" class="input-padrao" required>
@@ -41,7 +67,7 @@
                             <option>Macho</option>
                         </select>
                     </div>
-                     
+
                     <div class="item-selecionar">
                         <label class="info-pet">Idade:</label>
                         <select id="idade" class="selecionar-opcao" required>
@@ -59,9 +85,10 @@
                 <div>
                     <label class="info-pet">Imagens:</label>
                     <label for="imagem" class="botao-carregar">Carregar imagem</label>
-                    <input type="file" multiple accept=".jpg, .png, .gif, .jpeg " id="imagem" required class="carregar-imagem">
+                    <input type="file" multiple accept=".jpg, .png, .gif, .jpeg " id="imagem" required
+                        class="carregar-imagem">
                 </div>
-                
+
                 <div class="cadastrar">
                     <input type="submit" value="CADASTRAR PET" class="botao-cadastrar">
                 </div>
@@ -69,6 +96,7 @@
         </section>
     </main>
 
+    <script src="script/script.js"></script>
     <script src="./script/script-pet-add.js"></script>
 </body>
 
