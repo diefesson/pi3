@@ -26,7 +26,8 @@ html {
 }
 
 body {
-    margin: 0px;
+    margin: 0;
+    border: 0;
     min-height: 100%;
     background-color: var(--color-background-secondary);
 }
@@ -83,66 +84,88 @@ body {
     border-width: 2px;
     border-style: solid;
 }
-*{
-    margin: 0;
-    padding: 0;
 
-}
-.admin {
-    background-color: #1F1C21;
-    color: #fff;
-    width: 350px;
-    opacity: 70%;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-.list{
-    background-color: #FFFFFF;
-    height: 100%;
-}
-.main{
-    display: flex;
-    flex-direction: row;
+/**/
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     width: 100%;
     height: 100%;
-    margin: 0;
 }
 
-.cartao{
+.admin {
+    background-color: var(--color-background-surface);
+    width: 350px;
+}
+
+.gerencia {
+    display:flex;
+    align-items: center;
+    padding-left: 23px;
+    background-color: var(--color-secondary);
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--color-white-text-100);
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.options {
+    display:flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 10px;
+    width: 100%;
+    padding-left: 23px;
+    box-sizing: border-box;
+    font-family: var(--font-headline);
+    font-size: 18px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    padding-top: 30px;
+    align-items: center;
+}
+
+.cartao {
     display: grid;
     background-color: #fff;
     grid-template-columns: 0.35fr 1fr 1fr;
-    margin: 100px;
     height: 120px;
-    width: 750px; 
-    border:solid 2px #C4C4C4;
+    width: 750px;
+    border: solid 2px #C4C4C4;
 }
 
-.image{
+.image {
     border-right: 4px solid #C4C4C4;
 }
 
-.buttons-func{
-   margin: auto;
+.buttons-func {
+    margin: auto;
 }
 
-.buttons-func button{
+.buttons-func button {
     width: 80px;
     border-radius: 15px;
     border: none;
     margin-left: 10px;
-   
+
 }
 
-.text{
+.text {
     /* display: flex; */
     line-height: 6px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
 
-.status{
+.status {
     width: 10px;
     height: 10px;
     padding: 3px;
@@ -151,32 +174,18 @@ body {
     display: inline-block;
 }
 
-.botao{
+.botao {
     display: fixed;
 }
 
-.gerencia{
-    margin: 0;
-    padding: 30px;
-    background-color: #FFFFFF;
-    height: 20px;
-    margin-left: 10px;
-    width: 100%;
-}
-
-.options{
-    margin-left: 10px;
-    margin-top: 20px;
-}
-
-.prop{
+.prop {
     display: inline-block;
 }
 
-.state{
+.state {
     margin-bottom: 10px;
 }
 
-.actions{
+.actions {
     display: fixed;
 }
