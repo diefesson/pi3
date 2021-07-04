@@ -6,40 +6,41 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Happy Pet</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style/style-home.css'>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel='stylesheet' href='style/style-home.css'>
 </head>
 
 <body>
     <!-- Topbar -->
     <div class="topbar">
         <div class="topbar-content">
-            <span id="openSidebarButton" class="button-open-sidebar"></span>
+            <span id="openSidebarButton" class="sidebar-open"></span>
             <span class="topbar-brand">HAPPY PET</span>
         </div>
         <div class="topbar-content">
-            <button id="showSignInButton" class="button-sign button-sign-in">Sign in</button>
-            <button class="button-sign button-sign-up">Sign up</button>
+            <button id="showSignInButton" class="button-sign button-sign-in hidden">Sign in</button>
+            <button id="signOutButton" class="button-sign button-sign-out hidden">Sign out</button>
         </div>
     </div>
 
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar hidden">
-            <div class="sidebar-top">
-                <span>HOME</span>
-                <span id="closeSidebarButton" class="sidebar-close"></span>
-            </div>
-            <div class="sidebar-content">
-                <a href="ranking.html"><span>Ranking</span></a>
-                <span>Descubra</span>
-                <span>Compartilhe</span>
-            </div>
-            <div class="sidebar-bottom">
-                <span>The DiViLipes Developers - 2021</span>
-            </div>
+        <div class="sidebar-top">
+            <span>HOME</span>
+            <span id="closeSidebarButton" class="sidebar-close"></span>
+        </div>
+        <div class="sidebar-content">
+            <a href="ranking.html"><span>Ranking</span></a>
+            <span>Descubra</span>
+            <span>Compartilhe</span>
+        </div>
+        <div class="sidebar-bottom">
+            <span>The DiViLipes Developers - 2021</span>
         </div>
     </div>
+    </div>
 
-    <!-- Page content-->
+    <!-- Page content -->
     <div class="page-content">
         <div class="feed">
             <!-- Post 1-->
@@ -94,7 +95,8 @@
         </div>
     </div>
 
-    <script src='script/script-home.js'></script>
+    <script src="script/script.js"></script>
+    <script src="script/script-home.js"></script>
 </body>
 
 </html>
