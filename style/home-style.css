@@ -1,0 +1,156 @@
+/* Essential */
+
+:root {
+    /* Brand colors */
+    --color-primary: #0076F5;
+    --color-secondary: #23D7FB;
+    /* Background colors */
+    --color-background-primary: #21295C;
+    --color-background-secondary: #F5F5F5;
+    --color-background-surface: #FFFFFF;
+    /* Text colors */
+    --color-dark-text-100: #1F1C21FF;
+    --color-dark-text-80: #1F1C21CC;
+    --color-dark-text-60: #1F1C2199;
+    --color-dark-text-40: #1F1C2166;
+    /* Text colors */
+    --color-white-text-100: #FFFFFFFF;
+    --color-white-text-80: #FFFFFFCC;
+    --color-white-text-60: #FFFFFF99;
+    --color-white-text-40: #FFFFFF66;
+    /* Fonts */
+    --font-headline: Arial, Helvetica, sans-serif;
+    --font-body: Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    background-color: var(--color-background-secondary);
+}
+
+/* Coloring */
+
+.background-primary {
+    background-color: var(--color-background-primary);
+}
+
+/* Layout - topbar */
+
+.topbar {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 59px;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.topbar-brand {
+    font-family: var(--font-headline);
+    /* TODO: change me */
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-white-text-100);
+}
+
+.button-sign {
+    font-family: var(--font-headline);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-white-text-100);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.button-sign-in {
+    padding: 10px;
+    background-color: var(--color-primary);
+    text-align: center;
+    border-width: 0px;
+}
+
+.button-sign-up {
+    padding: 8px;
+    background-color: transparent;
+    border-color: var(--color-primary);
+    border-width: 2px;
+    border-style: solid;
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+}
+
+.feed {
+    padding-top: 15px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    display: flex;
+    direction: column;
+}
+
+.post {
+    width: 567px;
+    height: fit-content;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+}
+
+.post-top {
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--color-background-surface);
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.post-top img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.post-top span {
+    font-family: var(--font-headline);
+    color: var(--color-dark-text-80);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.post-middle {
+    width: 100%;
+    max-height: 600px;
+}
+
+.post-bottom {
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: start;
+    background-color: var(--color-background-surface);
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--color-dark-text-80);
+    font-size: 12px;
+    font-weight: 700;
+    font: var(--font-headline);
+}
