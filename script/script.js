@@ -25,8 +25,8 @@ function makeError(message, status) {
     }
 }
 
-function redirectUnsigned(){
-    if(localStorage.getItem("oid") == null){
+function redirectUnsigned() {
+    if (localStorage.getItem("oid") == null) {
         window.location.assign("home.html")
     }
 }
@@ -95,16 +95,16 @@ function loadListener() {
 window.addEventListener("load", loadListener)
 
 function initViews() {
-    binding.showSignInButton.addEventListener("click", () => {
-        binding.signInContainer.classList.remove("hidden")
-    })
     binding.signOutButton.addEventListener("click", () => {
         localStorage.removeItem("oid")
         localStorage.removeItem("uid")
         window.location.reload()
     })
     //TODO: update this functionality when a proper backend and component framework be present
-    if (window.location.href.endsWith("/home.html")) {
+    if (binding.signInContainer != null) {
+        binding.showSignInButton.addEventListener("click", () => {
+            binding.signInContainer.classList.remove("hidden")
+        })
         binding.signInContainer.addEventListener("click", (event) => {
             if (event.target == signInContainer) {
                 binding.signInContainer.classList.add("hidden")
@@ -202,5 +202,6 @@ async function signInCoroutine() {
     localStorage.setItem("oid", binding.oidInput.value)
     localStorage.setItem("uid", binding.uidInput.value)
     await sleep(1000)
-    window.location.assign("employer-home.html")
+    binding.signInContainer.classList.add("hidden")
+    showSignedTopbar()
 }

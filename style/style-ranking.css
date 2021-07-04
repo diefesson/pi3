@@ -1,32 +1,3 @@
-:root {
-    /* Brand colors */
-    --color-primary: #0076F5;
-    --color-secondary: #23D7FB;
-    /* Background colors */
-    --color-background-primary: #21295C;
-    --color-background-secondary: #F5F5F5;
-    --color-background-surface: #FFFFFF;
-    /* Text colors */
-    --color-dark-text-100: #1F1C21FF;
-    --color-dark-text-80: #1F1C21CC;
-    --color-dark-text-60: #1F1C2199;
-    --color-dark-text-40: #1F1C2166;
-    /* Text colors */
-    --color-white-text-100: #FFFFFFFF;
-    --color-white-text-80: #FFFFFFCC;
-    --color-white-text-60: #FFFFFF99;
-    --color-white-text-40: #FFFFFF66;
-    /* Fonts */
-    --font-headline: Arial, Helvetica, sans-serif;
-    --font-body: Arial, Helvetica, sans-serif;
-}
-
-.main-ranking{
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
 .page-content {
     display: flex;
     justify-content: center;
