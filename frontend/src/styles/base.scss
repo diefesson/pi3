@@ -1,0 +1,319 @@
+/* Brand colors */
+$color-primary: #0076f5;
+$color-secondary: #23d7fb;
+/* Background colors */
+$color-background-primary: #21295c;
+$color-background-secondary: #f5f5f5;
+$color-background-surface: #ffffff;
+$color-background-transparent: #0b0a0f66;
+/* Text colors */
+$color-dark-text-100: #1f1c21ff;
+$color-dark-text-80: #1f1c21cc;
+$color-dark-text-60: #1f1c2199;
+$color-dark-text-40: #1f1c2166;
+/* Text colors */
+$color-white-text-100: #ffffffff;
+$color-white-text-80: #ffffffcc;
+$color-white-text-60: #ffffff99;
+$color-white-text-40: #ffffff66;
+/* Status colors*/
+$color-status-info: #aeaeae;
+$color-status-success: #3bb710;
+$color-status-alert: #e3e721;
+$color-status-error: #ff3b46;
+/* Fonts */
+$font-headline: Arial, Helvetica, sans-serif;
+$font-body: Arial, Helvetica, sans-serif;
+/* Effects */
+$shadow-card: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+$transition-duration-field-color: 0.5s;
+/* Layout*/
+$layout-topbar-height: 59px;
+$layout-sidebar-width: 288px;
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    background-color: $color-background-secondary;
+}
+
+a,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Status colors */
+
+.text-info {
+    color: $color-status-info;
+}
+
+.text-success {
+    color: $color-status-success;
+}
+
+.text-alert {
+    color: $color-status-alert;
+}
+
+.text-error {
+    color: $color-status-error;
+}
+
+.background-info {
+    background-color: $color-status-info;
+}
+
+.background-success {
+    background-color: $color-status-success;
+}
+
+.background-alert {
+    background-color: $color-status-alert;
+}
+
+.background-error {
+    background-color: $color-status-error;
+}
+
+/* Sidebar */
+
+.sidebar,
+.sidebar-top,
+.sidebar-content,
+.sidebar-bottom {
+    width: $layout-sidebar-width;
+}
+
+@media screen and (max-width: 500px) {
+    .sidebar,
+    .sidebar-top,
+    .sidebar-content,
+    .sidebar-bottom {
+        width: 100%;
+    }
+}
+
+.sidebar {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    height: 100%;
+}
+
+.sidebar.hidden {
+    width: 0px;
+    transition-duration: 0.5;
+}
+
+.sidebar-top {
+    height: $color-status-success;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 20px;
+
+    box-sizing: border-box;
+}
+
+.sidebar-top span {
+    white-space: nowrap;
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-white-text-100;
+}
+
+.sidebar-close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+}
+
+.sidebar-close::before,
+.sidebar-close::after {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.sidebar-close::before {
+    width: 5px;
+    height: 20px;
+}
+
+.sidebar-close::after {
+    width: 20px;
+    height: 5px;
+}
+
+.sidebar-content {
+    background-color: $color-background-surface;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+}
+
+.sidebar-content span {
+    white-space: nowrap;
+    font-family: $font-headline;
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-dark-text-80;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-family: $font-body;
+    font-size: 14px;
+    color: $color-dark-text-40;
+}
+
+.sidebar-open {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-open::before {
+    display: block;
+    content: "";
+    margin-top: 20%;
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+    background-image: repeating-linear-gradient(
+        0,
+        #fff 0%,
+        #fff 16.6%,
+        transparent 16.6%,
+        transparent 41.6%,
+        #fff 41.6%,
+        #fff 58.2%,
+        transparent 58.2%,
+        transparent 83.2%,
+        #fff 83.2%,
+        #fff 100%
+    );
+}
+
+.sign-in-container {
+    padding-bottom: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-transparent;
+    z-index: 2;
+}
+
+.sign-in-container.hidden {
+    display: none;
+}
+
+.sign-in-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 118px;
+    background-color: $color-background-surface;
+    border-radius: 20px;
+    filter: $shadow-card;
+    width: 467px;
+    max-width: 100vw;
+    height: fit-content;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sign-in-top {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 36px;
+    color: $color-dark-text-100;
+}
+
+.sign-in-middle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.sign-in-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sign-in-field {
+    width: 100%;
+}
+
+.sign-in-field span {
+    font-family: $font-headline;
+    font-size: 10px;
+    font-weight: 400;
+    display: block;
+}
+
+.sign-in-field span {
+    font-family: $font-headline;
+    color: $color-dark-text-80;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field:focus-within span {
+    color: $color-primary;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field input,
+.sign-in-field input:focus {
+    outline: none;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: 100%;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    font-family: $font-body;
+    font-size: 24px;
+    color: $color-dark-text-80;
+}
+
+.sign-in-field input {
+    border-bottom-color: $color-dark-text-80;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field input:focus {
+    border-bottom-color: $color-primary;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-status {
+    font-size: 14px;
+    font-family: $font-body;
+}

@@ -1,0 +1,26 @@
+@use "@/styles/base.scss";
+
+.button-sign-in,
+.button-sign-out {
+    font-family: base.$font-headline;
+    font-size: 12px;
+    font-weight: 700;
+    color: base.$color-white-text-100;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.button-sign-in {
+    padding: 10px;
+    background-color: base.$color-primary;
+    text-align: center;
+    border-width: 0px;
+}
+
+.button-sign-out {
+    padding: 8px;
+    background-color: transparent;
+    border-color: base.$color-primary;
+    border-width: 2px;
+    border-style: solid;
+}

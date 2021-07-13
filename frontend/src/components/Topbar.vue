@@ -1,0 +1,27 @@
+<template>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-content">
+      <span class="sidebar-open"></span>
+      <span class="topbar-brand">HAPPY PET</span>
+    </div>
+    <div class="topbar-content">
+      <span v-if="session.signed">{{ session.uid }}</span>
+      <button-sign-in v-if="!session.signed" v-on:click="$emit('sign-in')" />
+      <button-sign-out v-if="session.signed" v-on:click="$emit('sign-out')" />
+    </div>
+  </div>
+</template>
+
+<script>
+import ButtonSignIn from "@/components/ButtonSignIn.vue";
+import ButtonSignOut from "@/components/ButtonSignOut.vue";
+
+export default {
+  name: "Topbar",
+  props: ["session"],
+  components: { ButtonSignIn, ButtonSignOut },
+};
+</script>
+
+<style src="@/styles/topbar.scss" lang="scss"></style>
