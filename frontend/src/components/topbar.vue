@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ButtonSignIn from "@/components/ButtonSignIn.vue";
-import ButtonSignOut from "@/components/ButtonSignOut.vue";
+import ButtonSignIn from "./button-sign-in.vue";
+import ButtonSignOut from "./button-sign-out.vue";
 
 export default {
   name: "Topbar",
