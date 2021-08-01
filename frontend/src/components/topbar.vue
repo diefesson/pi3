@@ -2,7 +2,7 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="topbar-content">
-      <span class="sidebar-open"></span>
+      <span v-on:click="sidebarClickHandler" class="topbar-sidebar-open"></span>
       <span class="topbar-brand">HAPPY PET</span>
     </div>
     <div class="topbar-content">
@@ -21,6 +21,11 @@ export default {
   name: "Topbar",
   props: ["session"],
   components: { ButtonSignIn, ButtonSignOut },
+  methods: {
+    sidebarClickHandler() {
+      this.$emit("toggle-sidebar");
+    },
+  },
 };
 </script>
 

@@ -6,6 +6,14 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },{
+    path: "/home",
+    name: "Home",
+    component: Home
+  }, {
+    path: "/ranking",
+    name: "Ranking",
+    component: Home // todo: replace with correct page
   }
 ]
 

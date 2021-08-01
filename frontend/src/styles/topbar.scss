@@ -1,4 +1,4 @@
-@use "@/styles/base.scss";
+@use "./base.scss";
 
 .topbar {
     position: sticky;
@@ -32,4 +32,32 @@
     font-size: 24px;
     font-weight: 700;
     color: base.$color-white-text-100;
+}
+
+.topbar-sidebar-open {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.topbar-sidebar-open::before {
+    display: block;
+    content: "";
+    margin-top: 20%;
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+    background-image: repeating-linear-gradient(
+        0,
+        #fff 0%,
+        #fff 16.6%,
+        transparent 16.6%,
+        transparent 41.6%,
+        #fff 41.6%,
+        #fff 58.2%,
+        transparent 58.2%,
+        transparent 83.2%,
+        #fff 83.2%,
+        #fff 100%
+    );
 }
