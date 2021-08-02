@@ -13,7 +13,7 @@ const routes = [
   }, {
     path: "/ranking",
     name: "Ranking",
-    component: Home // todo: replace with correct page
+    component: Home // TODO: implement ranking page
   }
 ]
 

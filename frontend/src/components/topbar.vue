@@ -5,10 +5,12 @@
       <span v-on:click="sidebarClickHandler" class="topbar-sidebar-open"></span>
       <span class="topbar-brand">HAPPY PET</span>
     </div>
-    <div class="topbar-content">
-      <span v-if="session.signed">{{ session.uid }}</span>
-      <button-sign-in v-if="!session.signed" v-on:click="$emit('sign-in')" />
-      <button-sign-out v-if="session.signed" v-on:click="$emit('sign-out')" />
+    <div class="topbar-content" v-if="session == null">
+      <button-sign-in v-on:click="$emit('toggle-sign-in')" />
+    </div>
+    <div class="topbar-content" v-else>
+      <span>{{ session.uid }}</span>
+      <button-sign-out v-on:click="$emit('sign-out')" />
     </div>
   </div>
 </template>

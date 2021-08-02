@@ -19,7 +19,6 @@ export default {
   methods: {
     async loadPosts() {
       this.posts = await postService.getAll();
-      console.log(this.posts); // todo: remove me
     },
   },
   mounted() {

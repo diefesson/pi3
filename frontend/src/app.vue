@@ -1,6 +1,6 @@
 <template>
   <topbar
-    v-on:sign-in="signInHandler"
+    v-on:toggle-sign-in="toggleSignInHandler"
     v-on:sign-out="signOutHandler"
     v-on:toggle-sidebar="toggleSidebarHandler"
     v-bind:session="session"
@@ -10,44 +10,46 @@
     v-bind:show="showSidebar"
     v-bind:session="session"
   />
+  <modal-container
+    v-bind:show="showSignIn"
+    v-on:toggle-sign-in="toggleSignInHandler"
+  >
+    <modal-sign-in
+      v-on:set-session="setSessionHandler"
+      v-on:toggle-sign-in="toggleSignInHandler"
+    />
+  </modal-container>
   <router-view />
 </template>
 
 <script>
 import Topbar from "./components/topbar.vue";
 import Sidebar from "./components/sidebar.vue";
+import ModalContainer from "./components/modal-container.vue";
+import ModalSignIn from "./components/modal-sign-in.vue";
 
 export default {
   name: "App",
-  components: { Topbar, Sidebar },
+  components: { Topbar, Sidebar, ModalContainer, ModalSignIn },
   data() {
     return {
       showSidebar: false,
-      session: {
-        signed: false,
-        oid: null,
-        uid: null,
-      },
+      showSignIn: false,
+      session: null,
     };
   },
   methods: {
-    signInHandler(event) {
-      console.log("sign in handler"); // todo: remove me
-      this.session = {
-        signed: true,
-        uid: "diefesson",
-        oid: "org",
-      };
+    setSessionHandler(event) {
+      this.session = event.session;
     },
     signOutHandler(event) {
-      this.session = {
-        signed: false,
-        uid: null,
-        oid: null,
-      };
+      this.session = null;
     },
     toggleSidebarHandler() {
       this.showSidebar = !this.showSidebar;
+    },
+    toggleSignInHandler() {
+      this.showSignIn = !this.showSignIn;
     },
   },
 };

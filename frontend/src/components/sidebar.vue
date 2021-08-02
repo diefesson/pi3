@@ -22,6 +22,12 @@
 </template>
 
 <script>
+const ShowType = {
+  UNSIGNED: "UNSIGNED",
+  SIGNED: "SIGNED",
+  ADMIN: "ADMIN",
+};
+
 export default {
   name: "Sidebar",
   props: ["show", "session"],
@@ -31,29 +37,39 @@ export default {
         {
           title: "Home",
           url: "home",
-          signed: false,
+          show: ShowType.UNSIGNED,
         },
         {
           title: "Ranking",
           url: "ranking",
-          signed: false,
+          show: ShowType.UNSIGNED,
         },
         {
           title: "Employee",
           url: "employee",
-          signed: true,
+          show: ShowType.SIGNED,
         },
         {
           title: "Add pet",
           url: "pet-add",
-          signed: true,
+          show: ShowType.SIGNED,
         },
       ],
     };
   },
   computed: {
+    allowedTypes() {
+      var types = [ShowType.UNSIGNED];
+      if (this.session != null) {
+        types += ShowType.SIGNED;
+        if (this.session.isAdmin) {
+          types += ShowType.ADMIN;
+        }
+      }
+      return types;
+    },
     filteredLinks() {
-      return this.links.filter((l) => this.session.signed || !l.signed);
+      return this.links.filter((l) => this.allowedTypes.includes(l.show));
     },
   },
   methods: {
