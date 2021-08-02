@@ -1,8 +1,11 @@
 <template>
   <div class="post">
     <div class="post-top">
-        <img class="post-top-image" v-bind:src="post.ong.image" />
-        <span>{{ post.ong.name }}</span>
+      <div class="post-profile">
+        <img v-bind:src="post.org.image" />
+        <span>{{ post.org.name }}</span>
+      </div>
+      <p>{{ post.description }}</p>
     </div>
     <img class="post-middle" v-bind:src="post.image" />
     <div class="post-bottom">SHARE</div>

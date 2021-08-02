@@ -2,12 +2,12 @@
 
 .post {
     width: 567px;
+    max-width: 100vw;
     height: fit-content;
     filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
 }
 
 .post-top {
-    display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: base.$color-background-surface;
@@ -15,17 +15,30 @@
     height: fit-content;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.post-top p {
+    font-family: base.$font-body;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.post-profile {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
     gap: 10px;
 }
 
-.post-top img {
+.post-profile img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     box-sizing: border-box;
 }
 
-.post-top span {
+.post-profile span {
     font-family: base.$font-headline;
     color: base.$color-dark-text-80;
     font-weight: 700;
@@ -42,7 +55,7 @@
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: base.$color-background-surface;
     padding: 20px;
     border-bottom-left-radius: 20px;

@@ -6,31 +6,24 @@
 
 <script>
 import Post from "./post.vue";
+import postService from "../services/post-service";
 
 export default {
   name: "Feed",
   components: { Post },
   data() {
     return {
-      posts: [
-        {
-          ong: {
-            name: "Test ONG",
-            image: "https://via.placeholder.com/150",
-          },
-          title: "Post title",
-          image: "https://via.placeholder.com/150",
-        },
-        {
-          ong: {
-            name: "Test ONG",
-            image: "https://via.placeholder.com/150",
-          },
-          title: "Post title",
-          image: "https://via.placeholder.com/150",
-        },
-      ],
+      posts: [],
     };
+  },
+  methods: {
+    async loadPosts() {
+      this.posts = await postService.getAll();
+      console.log(this.posts); // todo: remove me
+    },
+  },
+  mounted() {
+    this.loadPosts();
   },
 };
 </script>
