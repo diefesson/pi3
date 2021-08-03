@@ -1,0 +1,104 @@
+@use "./base.scss";
+
+.sidebar,
+.sidebar-top,
+.sidebar-content,
+.sidebar-bottom {
+    width: base.$layout-sidebar-width;
+}
+
+@media screen and (max-width: 500px) {
+    .sidebar,
+    .sidebar-top,
+    .sidebar-content,
+    .sidebar-bottom {
+        width: 100%;
+    }
+}
+
+.sidebar {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    height: 100%;
+}
+
+.sidebar.hidden {
+    width: 0px;
+    transition-duration: 0.5;
+}
+
+.sidebar-top {
+    height: base.$layout-topbar-height;
+    background-color: base.$color-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 20px;
+
+    box-sizing: border-box;
+}
+
+.sidebar-top span {
+    white-space: nowrap;
+    font-family: base.$font-headline;
+    font-weight: 700;
+    font-size: 24px;
+    color: base.$color-white-text-100;
+}
+
+.sidebar-close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+}
+
+.sidebar-close::before,
+.sidebar-close::after {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.sidebar-close::before {
+    width: 5px;
+    height: 20px;
+}
+
+.sidebar-close::after {
+    width: 20px;
+    height: 5px;
+}
+
+.sidebar-content {
+    background-color: base.$color-background-surface;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+}
+
+.sidebar-content span {
+    white-space: nowrap;
+    font-family: base.$font-headline;
+    font-size: 24px;
+    font-weight: 700;
+    color: base.$color-dark-text-80;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-family: base.$font-body;
+    font-size: 14px;
+    color: base.$color-dark-text-40;
+}

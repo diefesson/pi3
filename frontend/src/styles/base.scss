@@ -1,0 +1,83 @@
+/* Brand colors */
+$color-primary: #0076f5;
+$color-secondary: #23d7fb;
+/* Background colors */
+$color-background-primary: #21295c;
+$color-background-secondary: #f5f5f5;
+$color-background-surface: #ffffff;
+$color-background-transparent: #0b0a0f66;
+/* Text colors */
+$color-dark-text-100: #1f1c21ff;
+$color-dark-text-80: #1f1c21cc;
+$color-dark-text-60: #1f1c2199;
+$color-dark-text-40: #1f1c2166;
+/* Text colors */
+$color-white-text-100: #ffffffff;
+$color-white-text-80: #ffffffcc;
+$color-white-text-60: #ffffff99;
+$color-white-text-40: #ffffff66;
+/* Status colors*/
+$color-status-info: #aeaeae;
+$color-status-success: #3bb710;
+$color-status-alert: #e3e721;
+$color-status-error: #ff3b46;
+/* Fonts */
+$font-headline: Arial, Helvetica, sans-serif;
+$font-body: Arial, Helvetica, sans-serif;
+/* Effects */
+$shadow-card: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+$transition-duration-field-color: 0.5s;
+/* Layout*/
+$layout-topbar-height: 59px;
+$layout-sidebar-width: 288px;
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    background-color: $color-background-secondary;
+}
+
+a,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Status colors */
+
+.text-info {
+    color: $color-status-info;
+}
+
+.text-success {
+    color: $color-status-success;
+}
+
+.text-alert {
+    color: $color-status-alert;
+}
+
+.text-error {
+    color: $color-status-error;
+}
+
+.background-info {
+    background-color: $color-status-info;
+}
+
+.background-success {
+    background-color: $color-status-success;
+}
+
+.background-alert {
+    background-color: $color-status-alert;
+}
+
+.background-error {
+    background-color: $color-status-error;
+}
