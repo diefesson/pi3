@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-in-modal">
+  <modal>
     <div class="sign-in-top">
       <span>Sign in</span>
     </div>
@@ -23,17 +23,18 @@
         {{ statusMessage }}
       </label>
     </div>
-  </div>
+  </modal>
 </template>
 
 <script>
+import Modal from "./modal.vue";
 import ButtonSignIn from "./button-sign-in.vue";
 import userService from "../services/user-service";
-import sleep from "../utils/sleep"
+import sleep from "../utils/sleep";
 
 export default {
   name: "ModalSignIn",
-  components: { ButtonSignIn },
+  components: { Modal, ButtonSignIn },
   data() {
     return {
       oid: "",
@@ -48,11 +49,11 @@ export default {
       this.statusClass = status;
       this.statusMessage = message;
     },
-    successInfo(message){
-      this.setStatus("text-success", message)
+    successInfo(message) {
+      this.setStatus("text-success", message);
     },
-    infoStatus(message){
-      this.setStatus("text-info", message)
+    infoStatus(message) {
+      this.setStatus("text-info", message);
     },
     alertStatus(message) {
       this.setStatus("text-alert", message);
@@ -78,15 +79,15 @@ export default {
     async signInClickHandler() {
       if (this.validate()) {
         try {
-          this.infoStatus("Signing in...")
+          this.infoStatus("Signing in...");
           var session = await userService.signIn(
             this.oid,
             this.uid,
             this.password
           );
-          this.successInfo("Signed in")
-          await sleep(1000)
-          this.$emit("toggle-sign-in")
+          this.successInfo("Signed in");
+          await sleep(1000);
+          this.$emit("toggle-sign-in");
           this.$emit("set-session", { session });
         } catch (e) {
           this.errorStatus(e.message);

@@ -1,22 +1,5 @@
 @use "./base.scss";
 
-.sign-in-modal {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 118px;
-    background-color: base.$color-background-surface;
-    border-radius: 20px;
-    filter: base.$shadow-card;
-    width: 467px;
-    max-width: 100vw;
-    height: fit-content;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 .sign-in-top {
     font-family: base.$font-headline;
     font-weight: 700;
