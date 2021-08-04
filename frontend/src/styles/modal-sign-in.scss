@@ -1,0 +1,72 @@
+@use "./base.scss";
+
+.sign-in-top {
+    font-family: base.$font-headline;
+    font-weight: 700;
+    font-size: 36px;
+    color: base.$color-dark-text-100;
+}
+
+.sign-in-middle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.sign-in-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sign-in-field {
+    width: 100%;
+}
+
+.sign-in-field span {
+    font-family: base.$font-headline;
+    font-size: 10px;
+    font-weight: 400;
+    display: block;
+}
+
+.sign-in-field span {
+    font-family: base.$font-headline;
+    color: base.$color-dark-text-80;
+    transition-duration: base.$transition-duration-field-color;
+}
+
+.sign-in-field:focus-within span {
+    color: base.$color-primary;
+    transition-duration: base.$transition-duration-field-color;
+}
+
+.sign-in-field input,
+.sign-in-field input:focus {
+    outline: none;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: 100%;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    font-family: base.$font-body;
+    font-size: 24px;
+    color: base.$color-dark-text-80;
+}
+
+.sign-in-field input {
+    border-bottom-color: base.$color-dark-text-80;
+    transition-duration: base.$transition-duration-field-color;
+}
+
+.sign-in-field input:focus {
+    border-bottom-color: base.$color-primary;
+    transition-duration: base.$transition-duration-field-color;
+}
+
+.sign-in-status {
+    font-size: 14px;
+    font-family: base.$font-body;
+}

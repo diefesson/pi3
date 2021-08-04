@@ -1,0 +1,102 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    height: 100%;
+}
+
+.admin {
+    background-color: var(--color-background-surface);
+    width: 350px;
+}
+
+.gerencia {
+    display:flex;
+    align-items: center;
+    padding-left: 23px;
+    background-color: var(--color-secondary);
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--color-white-text-100);
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.options {
+    display:flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 10px;
+    width: 100%;
+    padding-left: 23px;
+    box-sizing: border-box;
+    font-family: var(--font-headline);
+    font-size: 18px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    padding-top: 30px;
+    align-items: center;
+}
+
+.cartao {
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: 0.35fr 1fr 1fr;
+    height: 120px;
+    width: 750px;
+    border: solid 2px #C4C4C4;
+}
+
+.image {
+    border-right: 4px solid #C4C4C4;
+}
+
+.buttons-func {
+    margin: auto;
+}
+
+.buttons-func button {
+    width: 80px;
+    border-radius: 15px;
+    border: none;
+    margin-left: 10px;
+
+}
+
+.text {
+    /* display: flex; */
+    line-height: 6px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.status {
+    width: 10px;
+    height: 10px;
+    padding: 3px;
+    background-color: #3BB710;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.botao {
+    display: fixed;
+}
+
+.prop {
+    display: inline-block;
+}
+
+.state {
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: fixed;
+}
