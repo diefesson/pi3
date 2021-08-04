@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const postRepo = require("../repositories/post-repo");
 
 class PostService {
@@ -27,3 +28,10 @@ class PostService {
 }
 
 module.exports = PostService;
+=======
+const postRepository = require("../repositories/post-repository")
+
+exports.getAll = () =>{
+    return postRepository.getAll()
+}
+>>>>>>> login

@@ -13,7 +13,11 @@ const routes = [
   }, {
     path: "/ranking",
     name: "Ranking",
+<<<<<<< HEAD
     component: Home // TODO: implement ranking page
+=======
+    component: Home // todo: replace with correct page
+>>>>>>> login
   }
 ]
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Post = require("../models/post");
 const PostService = require("../services/post-service");
 var postService = new PostService();
@@ -32,3 +33,10 @@ exports.put = async (req, res) => {
 exports.delete = (req, res) => {
   res.json(postService.delete(req.params.id));
 };
+=======
+const postService = require("../services/post-service")
+
+exports.getAll = (req, res) => {
+    res.json(postService.getAll())
+}
+>>>>>>> login

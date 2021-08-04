@@ -19,6 +19,10 @@ export default {
   methods: {
     async loadPosts() {
       this.posts = await postService.getAll();
+<<<<<<< HEAD
+=======
+      console.log(this.posts); // todo: remove me
+>>>>>>> login
     },
   },
   mounted() {

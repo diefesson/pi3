@@ -80,4 +80,111 @@ a:active {
 
 .background-error {
     background-color: $color-status-error;
+<<<<<<< HEAD
 }
+=======
+}
+
+.sign-in-container {
+    padding-bottom: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-transparent;
+    z-index: 2;
+}
+
+.sign-in-container.hidden {
+    display: none;
+}
+
+.sign-in-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 118px;
+    background-color: $color-background-surface;
+    border-radius: 20px;
+    filter: $shadow-card;
+    width: 467px;
+    max-width: 100vw;
+    height: fit-content;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sign-in-top {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 36px;
+    color: $color-dark-text-100;
+}
+
+.sign-in-middle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.sign-in-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sign-in-field {
+    width: 100%;
+}
+
+.sign-in-field span {
+    font-family: $font-headline;
+    font-size: 10px;
+    font-weight: 400;
+    display: block;
+}
+
+.sign-in-field span {
+    font-family: $font-headline;
+    color: $color-dark-text-80;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field:focus-within span {
+    color: $color-primary;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field input,
+.sign-in-field input:focus {
+    outline: none;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: 100%;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    font-family: $font-body;
+    font-size: 24px;
+    color: $color-dark-text-80;
+}
+
+.sign-in-field input {
+    border-bottom-color: $color-dark-text-80;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-field input:focus {
+    border-bottom-color: $color-primary;
+    transition-duration: $transition-duration-field-color;
+}
+
+.sign-in-status {
+    font-size: 14px;
+    font-family: $font-body;
+}
+>>>>>>> login
