@@ -1,4 +1,3 @@
-
 class Pet {
   constructor(race,sex,age,status) {
     this.race = race;

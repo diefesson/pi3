@@ -1,9 +1,8 @@
 class Post {
-    constructor(title,content,img,ong) {
-      this.title = title;
-      this.content = content;
+    constructor(content,img,ongId) {
+      this.description= content;
       this.img = img;
-      this.ong = ong;
+      this.ongId = ongId;
     }
   }
   
