@@ -1,38 +1,22 @@
+const userRepository = require("../repositories/user-repository");
+
 class UserService {
-    constructor() {
-      this.users = [];
-      this.id = 0;
-    }
-  
     add(user) {
-      this.id++;
-      user.id = this.id;
-      this.users.push(user);
+      // tratar
+      return userRepository.save(user);
     }
   
     getAll() {
-      return this.users;
+      return userRepository.findAll();
+    }
+
+    getByUsername(username){
+      return userRepository.findByUsername(username);
     }
   
     getById(id) {
-      return this.users.find((user) => user.id == id);
-    }
-  
-    update(id, user) {
-      this.users.forEach(function (e) {
-        if (id && id == e.id) {
-          for (var i in user) {
-            e[i] = user[i];
-          }
-        }
-      });
-    }
-  
-    delete(id) {
-      this.users = this.users.filter(function (el) {
-        return el.id != id;
-      });
-    }
+      return userRepository.findById(id);
+    }    
   }
   
   module.exports = UserService;
