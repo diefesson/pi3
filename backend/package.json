@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "start": "nodemon src/app.js 8081",
+    "start": "nodemon src/main.js 8081",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
