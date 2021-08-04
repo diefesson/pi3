@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home.vue'
+import Cadastro from '../views/cadastro-funcionario.vue'
 
 const routes = [
   {
@@ -14,6 +15,10 @@ const routes = [
     path: "/ranking",
     name: "Ranking",
     component: Home // todo: replace with correct page
+  }, {
+    path: "/cadastro-funcionario",
+    name: "Cadastro",
+    component: Cadastro
   }
 ]
 
