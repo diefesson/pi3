@@ -17,3 +17,10 @@ export class IncorrectPasswordError extends DomainError {
         super("Incorrect password")
     }
 }
+
+// TODO: backend yet does not give sufficent info to use more specific errors
+export class IncorrectCredentialsError extends DomainError {
+    constructor(){
+        super("Incorrect username or password")
+    }
+}

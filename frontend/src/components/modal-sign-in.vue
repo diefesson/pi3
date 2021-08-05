@@ -5,12 +5,8 @@
     </div>
     <div class="sign-in-middle">
       <div class="sign-in-field">
-        <span>ONG ID</span>
-        <input type="text" v-model="oid" />
-      </div>
-      <div class="sign-in-field">
-        <span>USER ID</span>
-        <input type="text" v-model="uid" />
+        <span>USERNAME</span>
+        <input type="text" v-model="username" />
       </div>
       <div class="sign-in-field">
         <span>PASSWORD</span>
@@ -37,8 +33,7 @@ export default {
   components: { Modal, ButtonSignIn },
   data() {
     return {
-      oid: "",
-      uid: "",
+      username: "",
       password: "",
       statusMessage: "",
       statusClass: "",
@@ -62,12 +57,8 @@ export default {
       this.setStatus("text-error", message);
     },
     validate() {
-      if (this.oid.length < 3) {
-        this.alertStatus("OID must contain at least 3 chars");
-        return false;
-      }
-      if (this.uid.length < 3) {
-        this.alertStatus("UID must contain at least 3 chars");
+      if (this.username.length < 3) {
+        this.alertStatus("Username must contain at least 3 chars");
         return false;
       }
       if (this.password.length < 3) {
@@ -81,8 +72,7 @@ export default {
         try {
           this.infoStatus("Signing in...");
           var session = await userService.signIn(
-            this.oid,
-            this.uid,
+            this.username,
             this.password
           );
           this.successInfo("Signed in");
