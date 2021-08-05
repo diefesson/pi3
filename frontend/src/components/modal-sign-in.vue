@@ -1,28 +1,34 @@
 <template>
   <modal>
-    <div class="sign-in-top">
-      <span>Sign in</span>
-    </div>
-    <div class="sign-in-middle">
-      <div class="sign-in-field">
-        <span>ONG ID</span>
-        <input type="text" v-model="oid" />
+      <div class="sign-in-top">
+        <span>Sign in</span>
       </div>
-      <div class="sign-in-field">
-        <span>USER ID</span>
-        <input type="text" v-model="uid" />
+      <div class="sign-in-middle">
+        <div class="sign-in-field">
+          <span>USERNAME</span>
+          <input
+            type="text"
+            v-model="username"
+            v-bind:minlength="minUsername"
+            required
+          />
+        </div>
+        <div class="sign-in-field">
+          <span>PASSWORD</span>
+          <input
+            type="password"
+            v-model="password"
+            v-bind:minlenght="minPassword"
+            required
+          />
+        </div>
       </div>
-      <div class="sign-in-field">
-        <span>PASSWORD</span>
-        <input type="password" v-model="password" />
+      <div class="sign-in-bottom">
+        <button-sign-in v-on:click="signInClickHandler" />
+        <label class="sign-in-status" v-bind:class="statusClass">
+          {{ statusMessage }}
+        </label>
       </div>
-    </div>
-    <div class="sign-in-bottom">
-      <button-sign-in v-on:click="signInClickHandler" />
-      <label class="sign-in-status" v-bind:class="statusClass">
-        {{ statusMessage }}
-      </label>
-    </div>
   </modal>
 </template>
 
@@ -37,11 +43,12 @@ export default {
   components: { Modal, ButtonSignIn },
   data() {
     return {
-      oid: "",
-      uid: "",
+      username: "",
       password: "",
       statusMessage: "",
       statusClass: "",
+      minUsername: 5,
+      minPassword: 6,
     };
   },
   methods: {
@@ -62,16 +69,16 @@ export default {
       this.setStatus("text-error", message);
     },
     validate() {
-      if (this.oid.length < 3) {
-        this.alertStatus("OID must contain at least 3 chars");
+      if (this.username.length < this.minUsername) {
+        this.alertStatus(
+          "Username must contain at least " + this.minUsername + " chars"
+        );
         return false;
       }
-      if (this.uid.length < 3) {
-        this.alertStatus("UID must contain at least 3 chars");
-        return false;
-      }
-      if (this.password.length < 3) {
-        this.alertStatus("Password must contain at least 8 chars");
+      if (this.password.length < this.minPassword) {
+        this.alertStatus(
+          "Password must contain at least " + this.minPassword + " chars"
+        );
         return false;
       }
       return true;
@@ -80,11 +87,7 @@ export default {
       if (this.validate()) {
         try {
           this.infoStatus("Signing in...");
-          var session = await userService.signIn(
-            this.oid,
-            this.uid,
-            this.password
-          );
+          var session = await userService.signIn(this.username, this.password);
           this.successInfo("Signed in");
           await sleep(1000);
           this.$emit("toggle-sign-in");
