@@ -11,18 +11,14 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home
-  }, {
-    path: "/ranking",
-    name: "Ranking",
-    component: Home // TODO: implement ranking page
-  }, 
+  },
   {
-    path: "/cadastro-pet",
+    path: "/pet/add",
     name: "CadastroPet",
     component: CadastroPet
   },
   {
-    path: "/cadastro-funcionario",
+    path: "/employee/add",
     name: "CadastroFuncionario",
     component: CadastroFuncionario
   }

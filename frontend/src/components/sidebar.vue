@@ -12,8 +12,6 @@
       >
         <span>{{ l.title }} </span>
       </router-link>
-      <span>Descubra</span>
-      <span>Compartilhe</span>
     </div>
     <div class="sidebar-bottom">
       <span>The DiViLipes Developers - 2021</span>
@@ -36,23 +34,18 @@ export default {
       links: [
         {
           title: "Home",
-          url: "home",
+          url: "/home",
           show: ShowType.UNSIGNED,
         },
         {
-          title: "Ranking",
-          url: "ranking",
-          show: ShowType.UNSIGNED,
-        },
-        {
-          title: "Employee",
-          url: "employee",
+          title: "Adcionar pet",
+          url: "/pet/add",
           show: ShowType.SIGNED,
         },
         {
-          title: "Add pet",
-          url: "pet-add",
-          show: ShowType.SIGNED,
+          title: "Cadastrar funcionário",
+          url: "/employee/add",
+          show: ShowType.ADMIN,
         },
       ],
     };
