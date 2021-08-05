@@ -16,11 +16,9 @@ exports.getById = async (req, res) => {
 
 exports.post = async (req, res) => {
   const value = await userService.add(new User(req.body.username, req.body.password, req.body.email, req.body.isAdmin, req.body.ongId));
-  if(!value)
-    res.send({
-      success: false
-    })
-  else{
-    res.json(value);
+  if (!value)
+    res.send({ success: false })
+  else {
+    res.json({ success: true, ...value });
   }
 }
