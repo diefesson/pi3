@@ -1,0 +1,216 @@
+@use "./base.scss";
+
+fieldset {
+    border: 0;
+    padding: 0;
+}
+
+
+.square {
+    background-color: base.$color-background-surface;
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.titulo {
+    padding: 2rem 0;
+}
+
+.titulo-cadastro {
+    font-family: base.$font-body;
+    font-weight: 700;
+    font-size: 2.50rem;
+}
+
+.formulario {
+    color: base.$color-dark-text-80;
+}
+
+.info-pet {
+    font-family: base.$font-body;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#titulo, #raca {
+    display: block;
+}
+
+#sexo, #idade {
+    height: 40px;
+    width: 180px;
+}
+
+.item-selecionar {
+    margin: 0 0 15px;
+}
+
+.selecionar-opcao {
+    font-family: base.$font-body;
+    color: base.$color-dark-text-60;
+    font-size: 1.2rem;
+}
+
+.botao-carregar {
+    display: none;
+}
+
+.botao-cadastrar {
+    background: base.$color-background-primary;
+    border: none;
+    border-radius: 5px;
+    color: base.$color-background-secondary;
+    cursor: pointer;
+    font-family: base.$font-body;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 25px 0 25px 0;
+    padding: 8px 0;
+    width: 45%;
+}
+
+.botao-cadastrar:hover {
+    background-color: base.$color-primary;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 769px) {
+    .content-add-pet {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .square {
+        margin: 4rem;
+        padding: 0.7rem 4rem;
+    }
+
+    .info-pet {
+        display: block;
+        margin: 0 0 5px;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 90%;
+        width: 36rem;
+        padding: 10px 10px;
+    }
+
+    .campos-selecionar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .descricao {
+        height: 6rem;
+        margin: 0 0 15px;
+        padding: 10px 10px;
+        width: 36rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-add-pet {
+        width: 98%;
+        height: 95%;
+        margin: 0 auto;
+    }
+
+    .square {
+        margin: 1rem;
+        padding: 0.3rem 2rem;
+    }
+
+    .info-pet {
+        display: flex;
+        margin: 0 0 5px;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 1.2rem;
+        max-width: 38rem;
+        width: 95%;
+        padding: 10px 10px;
+    }
+
+    .descricao {
+        margin: 0 0 15px;
+        width: 95%;
+        height: 6rem;
+        max-width: 38rem;
+        padding: 10px 10px;
+    }
+
+    .botao-cadastrar {
+        font-size: 1.2rem;
+        width: 16rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .square {
+        margin: 1rem;
+        padding: 0.2rem 0.8rem;
+    }
+
+    .titulo-cadastro {
+        font-size: 2rem;
+    }
+
+    .info-pet {
+        font-size: 1.3rem;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 1.2rem;
+        max-width: 38rem;
+        width: 90%;
+        padding: 7px 10px;
+    }
+
+    #sexo, #idade {
+        height: 30px;
+        width: 180px;
+    }
+    
+    .selecionar-opcao {
+        font-family: base.$font-body;
+        color: base.$color-dark-text-60;
+        font-size: 1rem;
+    }
+
+    .descricao {
+        margin: 0 0 15px;
+        width: 90%;
+        height: 6rem;
+        max-width: 38rem;
+        padding: 10px 10px;
+    }
+
+    .botao-carregar {
+        background: base.$color-dark-text-40;
+        border-radius: 10px;
+        color: base.$color-dark-text-80;
+        display: block;
+        cursor: pointer;
+        font-family: base.$font-body;
+        padding: 0.6rem 0.7rem;
+        text-transform: uppercase;
+        width: 162px;
+    }
+
+    .carregar-imagem {
+        display: none;
+    }
+
+    .botao-cadastrar {
+        font-size: 1rem;
+        width: 12rem;
+    }
+}
