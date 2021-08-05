@@ -5,7 +5,7 @@
       </div>
       <div class="sign-in-middle">
         <div class="sign-in-field">
-          <span>USERNAME</span>
+          <span>NOME DE USUÁRIO</span>
           <input
             type="text"
             v-model="username"
@@ -14,7 +14,7 @@
           />
         </div>
         <div class="sign-in-field">
-          <span>PASSWORD</span>
+          <span>SENHA</span>
           <input
             type="password"
             v-model="password"
@@ -71,13 +71,13 @@ export default {
     validate() {
       if (this.username.length < this.minUsername) {
         this.alertStatus(
-          "Username must contain at least " + this.minUsername + " chars"
+          "O nome de usuário deve ter pelo menos " + this.minUsername + " caracteres"
         );
         return false;
       }
       if (this.password.length < this.minPassword) {
         this.alertStatus(
-          "Password must contain at least " + this.minPassword + " chars"
+          "A senha teve ter ao menos " + this.minPassword + " caracteres"
         );
         return false;
       }

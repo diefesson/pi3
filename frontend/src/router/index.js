@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home.vue'
+import CadastroFuncionario from '../views/cadastro-funcionario.vue'
+import CadastroPet from '../views/cadastro-pet.vue'
 
 const routes = [
   {
@@ -9,10 +11,16 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home
-  }, {
-    path: "/ranking",
-    name: "Ranking",
-    component: Home // TODO: implement ranking page
+  },
+  {
+    path: "/pet/add",
+    name: "CadastroPet",
+    component: CadastroPet
+  },
+  {
+    path: "/employee/add",
+    name: "CadastroFuncionario",
+    component: CadastroFuncionario
   }
 ]
 

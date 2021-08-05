@@ -8,7 +8,7 @@
       <p>{{ post.description }}</p>
     </div>
     <img class="post-middle" v-bind:src="post.image" />
-    <div class="post-bottom">SHARE</div>
+    <div class="post-bottom">COMPARTILHAR</div>
   </div>
 </template>
 

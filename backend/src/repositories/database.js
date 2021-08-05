@@ -19,13 +19,13 @@ const posts = [
   {
     id: 0,
     orgId: 0,
-    description: "Post 0 description",
+    description: "Descrição do post 0",
     image: "https://via.placeholder.com/150"
   },
   {
     id: 1,
     orgId: 0,
-    description: "Post 1 description",
+    description: "Descrição do post 1",
     image: "https://via.placeholder.com/150"
   }
 ];

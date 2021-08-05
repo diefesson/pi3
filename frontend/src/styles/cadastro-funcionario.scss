@@ -1,0 +1,142 @@
+@use "./base.scss";
+
+fieldset {
+    border: 0;
+    padding: 0;
+}
+
+.square {
+    background-color: base.$color-background-surface;
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.titulo {
+    padding: 2rem 0;
+}
+
+.titulo-cadastro {
+    font-family: base.$font-body;
+    font-weight: 700;
+    font-size: 2.50rem;
+}
+
+.formulario {
+    color: base.$color-dark-text-80;
+}
+
+.dados-funcionario {
+    font-family: base.$font-body;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.cadastrar {
+    display: flex;
+    justify-content: center;
+}
+
+.botao-cadastrar {
+    background: base.$color-background-primary;
+    border: none;
+    border-radius: 5px;
+    color: base.$color-background-secondary;
+    cursor: pointer;
+    font-family: base.$font-body;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 25px 0 30px 0;
+    padding: 12px 0px;
+    width: 55%;
+}
+
+.botao-cadastrar:hover {
+    background-color: base.$color-primary;
+}
+
+
+@media screen and (min-width: 769px) {
+    .cadastro-content {
+        position: relative;
+        height: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .square {
+        margin: 3.2rem;
+        padding: 0.7rem 4rem;
+    }
+
+    .dados-funcionario {
+        display: block;
+        margin: 0 0 5px;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 90%;
+        width: 36rem;
+        padding: 10px 10px;
+    }   
+}
+
+@media screen and (max-width: 768px) {
+    .cadastro-content {
+        width: 98%;
+        height: 95%;
+        margin: 0 auto
+    }
+
+    .square {
+        margin: 1.2rem;
+        padding: 0.3rem 2rem;
+    }
+
+    .dados-funcionario {
+        display: flex;
+        margin: 0 0 5px;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 1.2rem;
+        max-width: 38rem;
+        width: 95%;
+        padding: 10px 10px;
+    }
+
+    .botao-cadastrar {
+        font-size: 1.2rem;
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .square {
+        margin: 1rem;
+        padding: 0.2rem 0.8rem;
+    }
+
+    .titulo-cadastro {
+        font-size: 2rem;
+    }
+
+    .dados-funcionario {
+        font-size: 1.3rem;
+    }
+
+    .input-padrao {
+        margin: 0 0 15px;
+        height: 1.2rem;
+        max-width: 38rem;
+        width: 90%;
+        padding: 7px 10px;
+    }
+
+    .botao-cadastrar {
+        font-size: 1rem;
+        width: 15rem;
+    }
+}
