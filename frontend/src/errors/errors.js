@@ -2,30 +2,30 @@ export class DomainError extends Error { }
 
 export class InvalidUserError extends Error{
     constructor(){
-        super("Invalid user data")
+        super("Dados de usuário invalidos")
     }
 }
-export class OrgNotFoundError extends DomainError {
+export class OngNotFoundError extends DomainError {
     constructor() {
-        super("Org not found")
+        super("Ong não encontrada")
     }
 }
 
 export class UserNotFoundError extends DomainError {
     constructor() {
-        super("User not found")
+        super("Usuário não encontrado")
     }
 }
 
 export class IncorrectPasswordError extends DomainError {
     constructor() {
-        super("Incorrect password")
+        super("Senha incorreta")
     }
 }
 
 // TODO: backend yet does not give sufficent info to use more specific errors
 export class IncorrectCredentialsError extends DomainError {
     constructor(){
-        super("Incorrect username or password")
+        super("nome de usuário ou senha incorretos")
     }
 }

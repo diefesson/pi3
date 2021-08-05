@@ -33,7 +33,7 @@ export default {
     return {
       links: [
         {
-          title: "Home",
+          title: "Inicio",
           url: "/home",
           show: ShowType.UNSIGNED,
         },
