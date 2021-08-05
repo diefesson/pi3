@@ -1,8 +1,8 @@
 export class DomainError extends Error { }
 
-export class InvalidUserError extends Error{
+export class UserAlreadyExistsError extends Error{
     constructor(){
-        super("Dados de usuário invalidos")
+        super("Email ou nome de usuários já usados, escolha outro")
     }
 }
 export class OngNotFoundError extends DomainError {
