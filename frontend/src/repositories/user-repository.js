@@ -1,29 +1,19 @@
-import sleep from "../utils/sleep"
+import axios from "axios"
+import {IncorrectCredentialsError } from "../errors/errors"
 
-import {
-    OrgNotFoundError,
-    UserNotFoundError,
-    IncorrectPasswordError
-}
-    from "../errors/errors"
+const loginUrl = process.env.VUE_APP_BACKEND_URL + "/login"
 
-const expectedOid = "test-org"
-const expectedUid = "diefesson"
-const expectedPassword = "12345678"
-
-// TODO: use axios when backend sign in is implemented
-async function signIn(oid, uid, password) {
-    await sleep(1000)
-    if (oid !== expectedOid) {
-        throw new OrgNotFoundError()
+async function signIn(username, password) {
+    try{
+        var success = (await axios.post(loginUrl, {username, password})).data.success
+        if (success){
+            return {ong: "test-ong", username, isAdmin: true}
+        } else {
+            throw new IncorrectCredentialsError()
+        }
+    } catch(e){
+        throw new Error(e.message)
     }
-    if (uid !== expectedUid) {
-        throw new UserNotFoundError()
-    }
-    if (password !== expectedPassword) {
-        throw new IncorrectPasswordError()
-    }
-    return { oid, uid, isAdmin: true }
 }
 
 export default{

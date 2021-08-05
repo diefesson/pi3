@@ -5,10 +5,9 @@ import CadastroPet from '../views/cadastro-pet.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },{
+    path: "/",
+    redirect: "/home"
+  }, {
     path: "/home",
     name: "Home",
     component: Home

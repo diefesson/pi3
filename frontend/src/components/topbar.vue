@@ -9,7 +9,7 @@
       <button-sign-in v-on:click="$emit('toggle-sign-in')" />
     </div>
     <div class="topbar-content" v-else>
-      <span>{{ session.uid }}</span>
+      <span>{{ session.username }}</span>
       <button-sign-out v-on:click="$emit('sign-out')" />
     </div>
   </div>
