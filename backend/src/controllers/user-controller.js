@@ -15,5 +15,12 @@ exports.getById = async (req, res) => {
 }
 
 exports.post = async (req, res) => {
-  res.json(await userService.add(new User(req.body.username, req.body.password, req.body.email, req.body.isAdmin, req.body.ongId)));
+  const value = await userService.add(new User(req.body.username, req.body.password, req.body.email, req.body.isAdmin, req.body.ongId));
+  if(!value)
+    res.send({
+      success: false
+    })
+  else{
+    res.json(value);
+  }
 }
