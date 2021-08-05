@@ -18,9 +18,17 @@ exports.findByUsername = async (username) => {
 };
 
 exports.save = async (user) => {
+  const valid = await pool.query("SELECT * FROM users WHERE username=$1 OR email=$2;", [
+    user.username, user.email
+  ]);
+  if(valid.rows != 0){
+    return false;
+  }
+  else {
   const resul = await pool.query(
     "INSERT INTO users(username, password, email, isAdmin, ongId) VALUES ($1,$2,$3,$4,$5) RETURNING *;",
     [user.username, user.password, user.email, user.isAdmin, user.ongId]
   );
   return resul.rows[0];
+  }
 };

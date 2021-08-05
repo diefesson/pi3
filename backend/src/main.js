@@ -5,6 +5,7 @@ const { urlencoded } = require("body-parser");
 const PostRouter = require("./routers/post-router");
 const PetRouter = require("./routers/pet-router");
 const UserRouter = require("./routers/user-router");
+const LoginRouter = require("./routers/login-router");
 
 
 dotenv.config()
@@ -26,6 +27,7 @@ app.use(cors())
 app.use(urlencoded({ extended: true }));
 app.use("/posts", PostRouter);
 app.use("/users", UserRouter);
+app.use("/login", LoginRouter);
 
 app.use((req, res) => {
     res.status(404).send({
