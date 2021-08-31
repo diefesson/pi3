@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     async loadPosts() {
-      this.posts = await postService.getAll();
+      this.posts = await postService.findAll();
     },
   },
   mounted() {

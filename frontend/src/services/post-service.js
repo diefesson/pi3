@@ -1,9 +1,29 @@
-import postRepository from "../repositories/post-repository";
+import postRepository from "../repositories/mock-post-repository";
 
-async function getAll() {
-    return await postRepository.getAll()
+async function findAll() {
+    return await postRepository.findAll()
+}
+
+async function find(id) {
+    return await postRepository.find(id)
+}
+
+async function add(post) {
+    return await postRepository.add(post)
+}
+
+async function update(id, post) {
+    return await postRepository(id, post)
+}
+
+async function remove(id) {
+    return await postRepository.remove(id)
 }
 
 export default {
-    getAll
+    findAll,
+    find,
+    add,
+    update,
+    remove
 }
