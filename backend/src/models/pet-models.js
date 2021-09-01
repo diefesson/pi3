@@ -4,7 +4,7 @@ class Pet {
     this.age = age;
     this.sex = sex;
     this.status = status;
-    this.ongId = ongId;
+    this.ongid = ongId;
   }
 }
 
