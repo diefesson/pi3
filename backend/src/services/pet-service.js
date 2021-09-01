@@ -9,8 +9,12 @@ class PetService {
     return petRepo.findAll();
   }
 
+  getByOng(id) {
+    return petRepo.findOng(id);
+  }
+
   getById(id) {
-    return petRepo.findOne(id);
+    return petRepo.findById(id);
   }
 
   getByRace(race) {
