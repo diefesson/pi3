@@ -1,25 +1,25 @@
-import makeRequest from "./make-request"
+import request from "./request"
 
 const URL = process.env.VUE_APP_BACKEND_URL + "/posts"
 
 async function findAll() {
-    return (await makeRequest.get(URL)).data
+    return (await request.get(URL))
 }
 
 async function find(id) {
-    return (await makeRequest.get(URL + "/" + id)).data
+    return (await request.get(URL + "/" + id))
 }
 
 async function add(post) {
-    return (await makeRequest.post(URL, post)).data
+    return (await request.post(URL, post))
 }
 
 async function update(id, post) {
-    return (await makeRequest.put(URL + "/" + id, post)).data
+    return (await request.put(URL + "/" + id, post))
 }
 
 async function remove(id) {
-    return (await makeRequest.delete(URL + "/" + id)).data
+    return (await request.delete(URL + "/" + id))
 }
 
 export default {
