@@ -1,7 +1,12 @@
 <template>
   <div class="page-content">
     <div class="post-list">
-      <post-item v-for="p in posts" v-bind:key="p.id" v-bind:post="p" />
+      <post-item
+        v-for="p in posts"
+        v-bind:key="p.id"
+        v-bind:post="p"
+        v-on:post-removed="postRemovedHandler"
+      />
     </div>
   </div>
 </template>
@@ -28,6 +33,9 @@ export default {
       } else {
         console.error(result.error);
       }
+    },
+    postRemovedHandler() {
+      this.updatePosts();
     },
   },
   mounted: async function () {

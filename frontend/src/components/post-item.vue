@@ -2,7 +2,10 @@
   <div class="post-item">
     <div class="content">
       <img v-bind:src="post.image" />
-      <span>{{ post.description }}</span>
+      <div>
+        <span>{{ post.title }}</span>
+        <p>{{ post.description }}</p>
+      </div>
     </div>
     <div class="options">
       <span class="option modify" v-on:click="modifyClickHandler">EDITAR</span>
@@ -26,7 +29,7 @@ export default {
       if (result.isError()) {
         console.error(result.error);
       }
-      this.$emit("postremoved", this.post);
+      this.$emit("post-removed", this.post);
     },
   },
 };
@@ -52,9 +55,19 @@ export default {
 .content {
   display: flex;
   align-items: flex-start;
+  
+}
+
+.content span{
   color: base.$color-dark-text-80;
-  font-size: 24px;
+  font-size: 20px;
   font-family: base.$font-headline;
+}
+
+.content p{
+  color: base.$color-dark-text-60;
+  font-size: 18px;
+  font-family: base.$font-body;
 }
 
 .options {

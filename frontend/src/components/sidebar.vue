@@ -48,6 +48,11 @@ export default {
           show: ShowType.ADMIN,
         },
         {
+          title: "Adcionar post",
+          url: "/posts/new",
+          show: ShowType.SIGNED,
+        },
+        {
           title: "Ver posts",
           url: "/posts",
           show: ShowType.SIGNED,

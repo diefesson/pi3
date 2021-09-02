@@ -12,7 +12,8 @@
       <input class="text-input" type="text" v-model="title" />
       <span>Descrição</span>
       <textarea class="text-input" v-model="description" />
-      <button v-on:click="saveClickHanlder">SALVAR</button>
+      <button v-if="id" v-on:click="updateAddClickHandler">ATUALIZAR</button>
+      <button v-else v-on:click="updateAddClickHandler">ADCIONAR</button>
     </div>
   </div>
 </template>
@@ -23,6 +24,7 @@ import imageService from "../services/image-service";
 
 export default {
   name: "ViewPost",
+  props: ["id"],
   data: () => {
     return {
       title: "",
@@ -44,17 +46,33 @@ export default {
         this.image = null;
       }
     },
-    async saveClickHanlder() {
+    async updateAddClickHandler() {
       const post = {
         title: this.title,
         description: this.description,
         image: this.image,
       };
       const result = await postService.add(post);
-      if (result.isError()) {
+      if (result.isSuccess()) {
+        this.$router.push("/posts");
+      } else {
         console.log(result.error);
       }
     },
+    async loadPost() {
+      const result = await postService.find(this.id);
+      if (result.isSuccess()) {
+        const post = result.value;
+        this.title = post.title;
+        this.description = post.description;
+        this.image = post.image;
+      }
+    },
+  },
+  async mounted() {
+    if (this.id != null) {
+      this.loadPost();
+    }
   },
 };
 </script>

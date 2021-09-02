@@ -31,13 +31,14 @@ const routes = [
   },
   {
     path: "/posts/new",
-    name: "ViewPost",
+    name: "AddPost",
     component: ViewPost
   },
   {
-    path: "/posts/:id",
-    name: "ViewPost",
-    component: ViewPost
+    path: "/posts/:id(\\d+)",
+    name: "UpdatePost",
+    component: ViewPost,
+    props: true
   }
 ]
 
