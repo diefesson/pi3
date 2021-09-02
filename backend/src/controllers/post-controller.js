@@ -34,6 +34,7 @@ exports.put = async (req, res) => {
   res.json(
     await postService.update(
       req.params.id,
+
       new Post(
         req.body.title,
         req.body.description,
