@@ -42,7 +42,7 @@ exports.save = async (pet) => {
 
 exports.update = async (id, pet) => {
   const result = await pool.query(
-    "UPDATE pets SET race=$1, age=$2,sex=$3,status=$4, ongid=$5 title=$6 WHERE id=$7 RETURNING *;",
+    "UPDATE pets SET race=$1, age=$2,sex=$3,status=$4, ongid=$5,title=$6 WHERE id=$7 RETURNING *;",
     [pet.race, pet.age, pet.sex, pet.status,pet.ongid,pet.title, id]
   );
   return result.rows[0];
