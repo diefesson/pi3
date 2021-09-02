@@ -1,34 +1,34 @@
 <template>
   <modal>
-      <div class="sign-in-top">
-        <span>Sign in</span>
+    <div class="sign-in-top">
+      <span>Sign in</span>
+    </div>
+    <div class="sign-in-middle">
+      <div class="sign-in-field">
+        <span>NOME DE USUÁRIO</span>
+        <input
+          type="text"
+          v-model="username"
+          v-bind:minlength="minUsername"
+          required
+        />
       </div>
-      <div class="sign-in-middle">
-        <div class="sign-in-field">
-          <span>NOME DE USUÁRIO</span>
-          <input
-            type="text"
-            v-model="username"
-            v-bind:minlength="minUsername"
-            required
-          />
-        </div>
-        <div class="sign-in-field">
-          <span>SENHA</span>
-          <input
-            type="password"
-            v-model="password"
-            v-bind:minlenght="minPassword"
-            required
-          />
-        </div>
+      <div class="sign-in-field">
+        <span>SENHA</span>
+        <input
+          type="password"
+          v-model="password"
+          v-bind:minlenght="minPassword"
+          required
+        />
       </div>
-      <div class="sign-in-bottom">
-        <button-sign-in v-on:click="signInClickHandler" />
-        <label class="sign-in-status" v-bind:class="statusClass">
-          {{ statusMessage }}
-        </label>
-      </div>
+    </div>
+    <div class="sign-in-bottom">
+      <button-sign-in v-on:click="signInClickHandler" />
+      <label class="sign-in-status" v-bind:class="statusClass">
+        {{ statusMessage }}
+      </label>
+    </div>
   </modal>
 </template>
 
@@ -71,7 +71,9 @@ export default {
     validate() {
       if (this.username.length < this.minUsername) {
         this.alertStatus(
-          "O nome de usuário deve ter pelo menos " + this.minUsername + " caracteres"
+          "O nome de usuário deve ter pelo menos " +
+            this.minUsername +
+            " caracteres"
         );
         return false;
       }
@@ -85,15 +87,16 @@ export default {
     },
     async signInClickHandler() {
       if (this.validate()) {
-        try {
-          this.infoStatus("Signing in...");
-          var session = await userService.signIn(this.username, this.password);
+        this.infoStatus("Signing in...");
+        const result = await userService.signIn(this.username, this.password);
+        if (result.isSuccess()) {
+          const session = result.value;
           this.successInfo("Signed in");
           await sleep(1000);
           this.$emit("toggle-sign-in");
           this.$emit("set-session", { session });
-        } catch (e) {
-          this.errorStatus(e.message);
+        } else {
+          this.errorStatus(result.error.message);
         }
       }
     },

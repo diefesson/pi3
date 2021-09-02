@@ -51,6 +51,11 @@ fieldset {
     font-size: 1.2rem;
 }
 
+.cadastrar {
+    display: flex;
+    justify-content: center;
+}
+
 .botao-carregar {
     display: none;
 }
@@ -66,17 +71,38 @@ fieldset {
     font-weight: 700;
     margin: 25px 0 25px 0;
     padding: 8px 0;
-    width: 45%;
+    width: 40%;
+    align-self: flex-start;
 }
 
 .botao-cadastrar:hover {
     background-color: base.$color-primary;
 }
 
+.botao-deletar {
+    background: base.$color-status-alert;
+    border: none;
+    border-radius: 5px;
+    color: base.$color-dark-text-100;
+    cursor: pointer;
+    font-family: base.$font-body;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 25px 0 25px 0;
+    padding: 8px 0;
+    width: 40%;
+    margin-left: 10px;
+    align-self: flex-end;
+}
+
+.botao-deletar:hover {
+    background: base.$color-status-error;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 769px) {
-    .content-add-pet {
+    .content-add-pet, .editar-pet-content {
         height: 90%;
         display: flex;
         align-items: center;
@@ -84,7 +110,7 @@ fieldset {
     }
     
     .square {
-        margin: 4rem;
+        margin: 6rem;
         padding: 0.7rem 4rem;
     }
 
@@ -114,7 +140,7 @@ fieldset {
 }
 
 @media screen and (max-width: 768px) {
-    .content-add-pet {
+    .content-add-pet, .editar-pet-content {
         width: 98%;
         height: 95%;
         margin: 0 auto;
@@ -147,8 +173,17 @@ fieldset {
     }
 
     .botao-cadastrar {
-        font-size: 1.2rem;
-        width: 16rem;
+        font-size: 1.1rem;
+        width: 10rem;
+    }
+
+    .botao-deletar {
+        font-size: 1.1rem;
+        width: 10rem;
+    }
+
+    .botao-cadastrar:hover {
+        background-color: base.$color-primary;
     }
 }
 
@@ -211,6 +246,11 @@ fieldset {
 
     .botao-cadastrar {
         font-size: 1rem;
-        width: 12rem;
+        width: 11rem;
+    }
+
+    .botao-deletar {
+        font-size: 1rem;
+        width: 11rem;
     }
 }

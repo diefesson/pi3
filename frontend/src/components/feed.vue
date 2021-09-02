@@ -18,7 +18,12 @@ export default {
   },
   methods: {
     async loadPosts() {
-      this.posts = await postService.getAll();
+      const result = await postService.findAll();
+      if (result.isSuccess()) {
+        this.posts = result.value;
+      } else {
+        console.error(result.error);
+      }
     },
   },
   mounted() {

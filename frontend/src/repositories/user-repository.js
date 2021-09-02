@@ -1,21 +1,47 @@
-import axios from "axios"
-import {IncorrectCredentialsError } from "../errors/errors"
+import { IncorrectCredentialsError } from "../errors/errors"
+import request from "./request"
+
+import { success, error } from "../errors/result"
 
 const loginUrl = process.env.VUE_APP_BACKEND_URL + "/login"
 
 async function signIn(username, password) {
-    try{
-        var success = (await axios.post(loginUrl, {username, password})).data.success
-        if (success){
-            return {ong: "test-ong", username, isAdmin: true}
+    const result = await request.post(loginUrl, { username, password })
+    if (result.isSuccess()) {
+        const data = result.value
+        if (data.success) {
+            // for some reason the backend is returning the password too
+            // i dont want to store it
+            const session = { ...data.user[0], password: undefined }
+            setSession(session)
+            return success(session)
         } else {
-            throw new IncorrectCredentialsError()
+            return error(new IncorrectCredentialsError())
         }
-    } catch(e){
-        throw new Error(e.message)
+    } else {
+        return result
     }
 }
 
-export default{
-    signIn
+function setSession(session) {
+    localStorage.setItem("session", JSON.stringify(session))
+}
+
+function getSession() {
+    const json = localStorage.getItem("session")
+    if (json != null) {
+        return JSON.parse(json)
+    } else {
+        return null
+    }
+}
+
+function clearSession() {
+    localStorage.removeItem("session")
+}
+
+export default {
+    signIn,
+    getSession,
+    clearSession
 }

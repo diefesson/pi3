@@ -1,0 +1,372 @@
+@use "./base.scss";
+
+@media screen and (min-width: 1080px) {
+    .square {
+        background-color: base.$color-background-surface;
+        border-radius: 20px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        margin: 4.2rem;
+        padding: 3rem 3rem;
+    }
+    
+    .view-pet {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .imagem {
+        border-radius: 5px;
+        width: 35rem;
+    }
+    
+    .titulo-pet {
+        padding: 1rem 0;
+        margin-left: 20px;
+    }
+    
+    .titulo {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .pet-principal {
+        display: flex;
+    }
+    
+    .dado-pet {
+        width: 25rem;
+        margin-left: 1.5%;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+    
+    .span-dados {
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+    }
+    
+    .span-info {
+        font-family: base.$font-body;
+        font-weight: bold;
+    }
+
+    .contato {
+        margin-top: 120px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    .description {
+        margin-top: 1.5%;
+        width: 61rem;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+    
+    .titulo-description-session {
+        padding: 1rem;
+    }
+    
+    .titulo-description {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    
+    .text-description {
+        font-family: base.$font-body;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .voltar {
+        display: flex;
+        justify-content:end;
+    }
+    
+    .button-voltar {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 20px 0 0px 0;
+        padding: 12px 0px;
+        width: 10%;
+    }
+
+    .button-voltar:hover {
+        background-color: base.$color-primary;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .square {
+        background-color: base.$color-background-surface;
+        border-radius: 20px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        margin: 3.2rem;
+        padding: 1rem 1rem;
+    }
+    
+    .view-pet {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .imagem {
+        border-radius: 5px;
+        width: 25rem;
+    }
+    
+    .titulo-pet {
+        padding: 1rem 0;
+        margin-left: 20px;
+    }
+    
+    .titulo {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .pet-principal {
+        display: block;
+    }
+    
+    .dado-pet {
+        width: 25rem;
+        margin-top: 1.5%;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+
+    .info-pet {
+        margin-bottom: 15px;
+    }
+    
+    .span-dados {
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+    }
+    
+    .span-info {
+        font-family: base.$font-body;
+        font-weight: bold;
+    }
+
+    .contato {
+        margin-top: 60px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+    
+    .description {
+        margin-top: 1.5%;
+        width: 25rem;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+    
+    .titulo-description-session {
+        padding: 1rem;
+    }
+    
+    .titulo-description {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
+    .text-description {
+        font-family: base.$font-body;
+        margin-left: 1.3rem;
+        margin-right: 1.3rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .voltar {
+        display: flex;
+        justify-content:end;
+    }
+    
+    .button-voltar {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 20px 0 0px 0;
+        padding: 12px 0px;
+        width: 6rem;
+    }
+
+    .button-voltar:hover {
+        background-color: base.$color-primary;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .square {
+        background-color: base.$color-background-surface;
+        border-radius: 20px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        margin: 3.2rem;
+        padding: 1rem 1rem;
+    }
+    
+    .view-pet {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .imagem {
+        border-radius: 5px;
+        width: 17rem;
+    }
+    
+    .titulo-pet {
+        padding: 1rem 0;
+        margin-left: 20px;
+    }
+    
+    .titulo {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .pet-principal {
+        display: block;
+    }
+    
+    .dado-pet {
+        width: 17rem;
+        margin-top: 1.5%;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+
+    .info-pet {
+        margin-bottom: 15px;
+    }
+    
+    .span-dados {
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+    }
+    
+    .span-info {
+        font-family: base.$font-body;
+        font-weight: bold;
+    }
+    
+    .contato {
+        margin-top: 20px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    .description {
+        margin-top: 1.5%;
+        width: 17rem;
+        border: 1px solid base.$color-status-info;
+        border-radius: 10px;
+    }
+    
+    .titulo-description-session {
+        padding: 1rem;
+    }
+    
+    .titulo-description {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
+    .text-description {
+        font-family: base.$font-body;
+        margin-left: 1.3rem;
+        margin-right: 1.3rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .voltar {
+        display: flex;
+        justify-content:end;
+    }
+    
+    .button-voltar {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 20px 0 0px 0;
+        padding: 12px 0px;
+        width: 6rem;
+    }
+
+    .button-voltar:hover {
+        background-color: base.$color-primary;
+    }
+}

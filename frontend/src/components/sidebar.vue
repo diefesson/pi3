@@ -43,9 +43,24 @@ export default {
           show: ShowType.SIGNED,
         },
         {
+          title: "Ver pets",
+          url: "/pet/list",
+          show: ShowType.SIGNED,
+        },
+        {
           title: "Cadastrar funcionário",
           url: "/employee/add",
           show: ShowType.ADMIN,
+        },
+        {
+          title: "Adcionar post",
+          url: "/posts/new",
+          show: ShowType.SIGNED,
+        },
+        {
+          title: "Ver posts",
+          url: "/posts",
+          show: ShowType.SIGNED,
         },
       ],
     };

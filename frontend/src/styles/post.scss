@@ -19,10 +19,20 @@
     box-sizing: border-box;
 }
 
-.post-top p {
-    font-family: base.$font-body;
+.post-content span{
+    font-family: base.$font-headline;
+    font-weight: 700;
     margin-top: 10px;
+    font-size: 20px;
+    color: base.$color-dark-text-80;
+}
+
+.post-content p {
+    font-size: 18px;
+    font-family: base.$font-body;
+    margin-top: 5px;
     margin-bottom: 0px;
+    color: base.$color-dark-text-60
 }
 
 .post-profile {

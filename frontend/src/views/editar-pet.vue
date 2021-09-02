@@ -1,8 +1,8 @@
 <template>
-    <main class="content-add-pet">
+    <main class="editar-pet-content">
         <section class="square">
             <div class="titulo">
-                <span class="titulo-cadastro">Cadastrar PET</span>
+                <span class="titulo-cadastro">Editar PET</span>
             </div>
 
             <div class="formulario">
@@ -34,7 +34,8 @@
                 
                 
                 <div class="cadastrar">
-                    <input type="submit" value="CADASTRAR PET" class="botao-cadastrar" @click="cadastroPetClickHandler">
+                    <input type="submit" value="EDITAR PET" class="botao-cadastrar" @click="putPet">
+                    <input type="submit" value="DELETAR PET" @click="deletePet" class="botao-deletar">
                 </div>
             </div>
         </section>
@@ -42,39 +43,50 @@
 </template>
 
 <script>
-import petService from "../services/pet-service";
-// import userService from "../services/user-service"
+import axios from 'axios'
 
 export default {
-
-    name: "CadastroPet",
+    name: "EditarPet",
     data() {
         return {
+            id: "",
             title: "",
             race: "",
             age: 0,
             sex: 0,
-            ongId: ""
+            ongid: "",
+            basePets: "http://localhost:3000/pets"
         };
     },
-    methods: {
-        async cadastroPetClickHandler() {
-            try {
-                // this.ongId = userService.getSession().ongid
-                await petService.cadastrarPet(
-                    this.title,
-                    this.race,
-                    this.age,
-                    this.sex,
-                    1, // Status
-                    1 // OngId
-                );
-                this.$router.push("/pet/list");
-            } catch (e) {
-                alert(e.message);
-            }
-        },
+    created() {
+        const item = JSON.parse(localStorage.getItem('petApp'))
+        this.id = item[0].id
+        this.title = item[0].title
+        this.race = item[0].race
+        this.age = item[0].age
+        this.sex = item[0].sex
+        this.ongid = item[0].ongid
     },
+    methods: {
+        putPet() {
+            const obj = {
+                title: this.title,
+                race: this.race,
+                age: this.age,
+                sex: this.sex,
+                status: 1,
+                ongid: this.ongid,
+            }
+            axios.put(this.basePets + "/" + this.id, obj).then((result) => {
+                this.$router.push("/pet/list");
+            })
+        },
+        deletePet() {
+            axios.delete(this.basePets + "/"+ this.id, ).then((result) => {
+                this.$router.push("/pet/list");
+            });
+        }
+    }
 }
 </script>
 

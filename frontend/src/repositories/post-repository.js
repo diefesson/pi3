@@ -1,11 +1,31 @@
-import axios from "axios"
+import request from "./request"
 
-const url = process.env.VUE_APP_BACKEND_URL + "/posts"
+const URL = process.env.VUE_APP_BACKEND_URL + "/posts"
 
-async function getAll() {
-    return (await axios.get(url)).data
+async function findAll() {
+    return (await request.get(URL))
+}
+
+async function find(id) {
+    return (await request.get(URL + "/" + id))
+}
+
+async function add(post) {
+    return (await request.post(URL, post))
+}
+
+async function update(id, post) {
+    return (await request.put(URL + "/" + id, post))
+}
+
+async function remove(id) {
+    return (await request.delete(URL + "/" + id))
 }
 
 export default {
-    getAll
+    findAll,
+    find,
+    add,
+    remove,
+    update
 }

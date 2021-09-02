@@ -5,7 +5,10 @@
         <img v-bind:src="post.org.image" />
         <span>{{ post.org.name }}</span>
       </div>
-      <p>{{ post.description }}</p>
+      <div class="post-content">
+        <span>{{ post.title }}</span>
+        <p>{{ post.description }}</p>
+      </div>
     </div>
     <img class="post-middle" v-bind:src="post.image" />
     <div class="post-bottom">COMPARTILHAR</div>
