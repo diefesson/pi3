@@ -2,7 +2,7 @@ const pool = require("../dbs/postgres");
 
 exports.findAll = async () => {
   const resul = await pool.query(
-    "SELECT pets.id, pets.race,pets.age,pets.sex,pets.status,ongs.name FROM pets,ongs WHERE ongs.id = pets.ongid;"
+    "SELECT pets.id,pets.title,pets.race,pets.age,pets.sex,pets.status,ongs.name FROM pets,ongs WHERE ongs.id = pets.ongid;"
   );
   return resul.rows;
 };
