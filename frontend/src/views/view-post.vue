@@ -1,7 +1,7 @@
 <template>
   <div class="post-form">
     <div>
-      <div class="image-input">
+      <div class="image-input" v-on:click="removeImageHandler">
         <input type="file" v-on:change="selectImageHandler" ref="imageInput" />
         <img v-if="image" v-bind:src="image" />
         <span v-else>SELECIONAR IMAGEM</span>
@@ -12,6 +12,7 @@
       <input class="text-input" type="text" v-model="title" />
       <span>Descrição</span>
       <textarea class="text-input" v-model="description" />
+      <span class="alert" v-if="alert">{{ alert }}</span>
       <button v-if="id" v-on:click="updateAddClickHandler">ATUALIZAR</button>
       <button v-else v-on:click="updateAddClickHandler">ADCIONAR</button>
     </div>
@@ -21,6 +22,7 @@
 <script>
 import postService from "../services/post-service";
 import imageService from "../services/image-service";
+import postSchema from "../validation/post-schema";
 
 export default {
   name: "ViewPost",
@@ -30,9 +32,13 @@ export default {
       title: "",
       description: "",
       image: null,
+      alert: null,
     };
   },
   methods: {
+    removeImageHandler() {
+      this.image = null;
+    },
     async selectImageHandler(e) {
       const file = this.$refs.imageInput.files[0];
       if (file) {
@@ -47,21 +53,41 @@ export default {
       }
     },
     async updateAddClickHandler() {
+      this.alert = null;
       const post = {
         title: this.title,
         description: this.description,
         image: this.image,
       };
-      let result;
-      if (this.id == null) {
-        result = await postService.add(post);
+      const validation = postSchema.validate(post);
+      if (validation.error) {
+        this.alertValidation(validation);
       } else {
-        result = await postService.update(this.id, post);
+        let result;
+        if (this.id == null) {
+          result = await postService.add(post);
+        } else {
+          result = await postService.update(this.id, post);
+        }
+        if (result.isSuccess()) {
+          this.$router.push("/posts");
+        } else {
+          console.log(result.error);
+        }
       }
-      if (result.isSuccess()) {
-        this.$router.push("/posts");
-      } else {
-        console.log(result.error);
+    },
+    alertValidation(validation) {
+      const field = validation.error.details[0].context.key;
+      switch (field) {
+        case "title":
+          this.alert = "O titulo deve conter 3 a 30 caracteres alfanumericos";
+          break;
+        case "description":
+          this.alert = "A descrição deve ter 3 a 250 caracteres alfanumericos";
+          break;
+        case "image":
+          this.alert = "Uma imagem deve ser selecionada";
+          break;
       }
     },
     async loadPost() {
@@ -167,5 +193,9 @@ $image-size: 250px;
   font-family: base.$font-body;
   width: 100%;
   box-sizing: border-box;
+}
+
+.alert{
+  color: base.$color-status-error;
 }
 </style>
