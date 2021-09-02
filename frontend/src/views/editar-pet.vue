@@ -1,11 +1,11 @@
 <template>
-    <main class="content-add-pet">
+    <main class="editar-pet-content">
         <section class="square">
             <div class="titulo">
-                <span class="titulo-cadastro">Cadastrar PET</span>
+                <span class="titulo-cadastro">Editar PET</span>
             </div>
 
-            <div class="formulario">
+            <form class="formulario" @submit.prevent="cadastroPetClickHandler">
                 <fieldset class="dados-iniciais">
                     <label for="titulo" class="info-pet" name="titulo">Título:</label>
                     <input type="text" name="titulo" id="titulo" class="input-padrao" v-model="title" required>
@@ -34,18 +34,17 @@
                 
                 
                 <div class="cadastrar">
-                    <input type="submit" value="CADASTRAR PET" class="botao-cadastrar" @click="cadastroPetClickHandler">
+                    <input type="submit" value="EDITAR PET" class="botao-cadastrar">
+                    <input type="submit" value="DELETAR PET" class="botao-deletar">
                 </div>
-            </div>
+            </form>
         </section>
     </main>
 </template>
 
 <script>
-import petService from "../services/pet-service";
-
 export default {
-    name: "CadastroPet",
+    name: "EditarPet",
     data() {
         return {
             title: "",
@@ -54,23 +53,6 @@ export default {
             sex: 0,
             ongId: ""
         };
-    },
-    methods: {
-        async cadastroPetClickHandler() {
-            try {
-                await petService.cadastrarPet(
-                    this.title,
-                    this.race,
-                    this.age,
-                    this.sex,
-                    1,
-                    1
-                );
-                this.$router.push("/pet/list");
-            } catch (e) {
-                alert(e.message);
-            }
-        },
     },
 }
 </script>

@@ -1,0 +1,319 @@
+@use "./base.scss";
+
+@media screen and (min-width: 970px) {
+    .titulo {
+        padding: 2rem 0;
+    }
+    
+    .titulo-visualizar {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 2.50rem;
+    }
+
+    .list-pets {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        margin: 1rem;
+        padding: 0.7rem 4rem;
+    }
+    
+    .cards-list {
+        width: 60rem;
+        height: 12rem;
+    }
+    
+    .card {
+        display: flex;
+        border-radius: 10px;
+        border: 2px solid base.$color-background-primary;
+        box-sizing: border-box;
+        width: 100%;
+        height: 10rem;
+        background-color: base.$color-background-surface;
+        margin-bottom: 1rem;
+    }
+
+    .imagem {
+        height: 9rem;
+        width: 13rem;
+        margin-left: 6px;
+        margin-top: 6px;
+    }
+    
+    .nome-pet {
+        padding: 0.7rem;
+    }
+    
+    .span-pet {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .span-dados {
+        padding-left: 0.7rem;
+        display: block;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+    }
+
+    .botoes {
+        margin-left: 36rem;
+    }
+    
+    .botao-ver {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        margin-top: 11px;
+        margin-right: 10px;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-ver:hover {
+        color: base.$color-white-text-100;
+        background-color: base.$color-dark-text-80;
+    }
+    
+    .botao-editar {
+        background: base.$color-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-editar:hover {
+        color: base.$color-dark-text-100;
+        background-color: base.$color-secondary;
+    }
+}
+
+@media screen and (max-width: 969px) {
+    .titulo {
+        padding: 2rem 0;
+    }
+    
+    .titulo-visualizar {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 2.50rem;
+    }
+
+    .list-pets {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        margin: 1rem;
+        padding: 0.7rem 4rem;
+    }
+    
+    .cards-list {
+        width: 40rem;
+        height: 80rem;
+    }
+    
+    .card {
+        display: flex;
+        border-radius: 10px;
+        border: 2px solid base.$color-background-primary;
+        box-sizing: border-box;
+        width: 100%;
+        height: 10rem;
+        background-color: base.$color-background-surface;
+        margin-bottom: 1rem;
+    }
+
+    .imagem {
+        height: 9rem;
+        width: 13rem;
+        margin-left: 6px;
+        margin-top: 6px;
+    }
+    
+    .nome-pet {
+        padding: 0.7rem;
+    }
+    
+    .span-pet {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .span-dados {
+        padding-left: 0.7rem;
+        display: block;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+    }
+
+    .botoes {
+        margin-left: 16.5rem;
+    }
+    
+    .botao-ver {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        margin-top: 11px;
+        margin-right: 10px;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-ver:hover {
+        color: base.$color-white-text-100;
+        background-color: base.$color-dark-text-80;
+    }
+    
+    .botao-editar {
+        background: base.$color-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-editar:hover {
+        color: base.$color-dark-text-100;
+        background-color: base.$color-secondary;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .titulo {
+        padding: 2rem 0;
+    }
+    
+    .titulo-visualizar {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 2.50rem;
+    }
+
+    .list-pets {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        margin: 1rem;
+        padding: 0.7rem 4rem;
+    }
+    
+    .cards-list {
+        width: 20rem;
+        height: 80rem;
+    }
+    
+    .card {
+        display: block;
+        border-radius: 10px;
+        border: 2px solid base.$color-background-primary;
+        box-sizing: border-box;
+        width: 100%;
+        height: 20rem;
+        background-color: base.$color-background-surface;
+        margin-bottom: 1rem;
+    }
+
+    .imagem-pet {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagem {
+        height: 9rem;
+        width: 13rem;
+        
+    }
+
+    .nome-pet {
+        padding: 0.7rem;
+    }
+    
+    .span-pet {
+        font-family: base.$font-body;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .span-dados {
+        padding-left: 0.7rem;
+        display: block;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+    }
+
+    .botoes {
+        display: block;
+        margin-left: 80px;
+        margin-right: auto;
+    }
+    
+    .botao-ver {
+        background: base.$color-background-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        margin-top: 11px;
+        margin-right: 10px;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-ver:hover {
+        color: base.$color-white-text-100;
+        background-color: base.$color-dark-text-80;
+    }
+    
+    .botao-editar {
+        background: base.$color-primary;
+        border: none;
+        border-radius: 5px;
+        color: base.$color-background-secondary;
+        cursor: pointer;
+        font-family: base.$font-body;
+        font-size: 1.1rem;
+        padding: 6px 5px;
+        width: 70px;
+    }
+    
+    .botao-editar:hover {
+        color: base.$color-dark-text-100;
+        background-color: base.$color-secondary;
+    }
+}
