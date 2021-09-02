@@ -5,6 +5,7 @@ const { urlencoded } = require("body-parser");
 const cookieParser = require("cookie-parser");
 const sessions = require("express-session");
 const PostRouter = require("./routers/post-router");
+const PetRouter = require("./routers/pet-router");
 const UserRouter = require("./routers/user-router");
 const LoginRouter = require("./routers/login-router");
 
@@ -27,17 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded( {extended: true} ));
 app.use(cors())
 app.use(urlencoded({ extended: true }));
-app.use("/session", (req, res, next) => {
-    session = req.session;
-    if(session.user == 1)
-        res.send({
-            isLogged: true
-        });
-    else 
-        res.send({
-            isLogged: false
-        });
-});
+app.use("/pets", PetRouter);
 app.use("/posts", PostRouter);
 app.use("/users", UserRouter);
 app.use("/login", LoginRouter);
