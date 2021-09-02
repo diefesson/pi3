@@ -30,7 +30,7 @@ async function findAll() {
 }
 
 async function find(id) {
-    console.log("mock-post-find")
+    console.log("mock-post-find: " + id)
     return success({
         id: id,
         title: "post " + id + " title",
@@ -45,7 +45,8 @@ async function find(id) {
 }
 
 async function add(post) {
-    console.log("mock-post-add: " + post)
+    console.log("mock-post-add: ")
+    console.log(post)
     return success({
         ...post,
         id: 10,
@@ -58,7 +59,8 @@ async function add(post) {
 }
 
 async function update(id, post) {
-    console.log("mock-post-update: " + id + ", " + post)
+    console.log("mock-post-update: " + id)
+    console.log(post)
     return success({
         ...post,
         id: id,

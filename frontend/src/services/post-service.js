@@ -13,7 +13,7 @@ async function add(post) {
 }
 
 async function update(id, post) {
-    return await postRepository(id, post)
+    return await postRepository.update(id, post)
 }
 
 async function remove(id) {

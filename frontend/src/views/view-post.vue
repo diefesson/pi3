@@ -52,7 +52,12 @@ export default {
         description: this.description,
         image: this.image,
       };
-      const result = await postService.add(post);
+      let result;
+      if (this.id == null) {
+        result = await postService.add(post);
+      } else {
+        result = await postService.update(this.id, post);
+      }
       if (result.isSuccess()) {
         this.$router.push("/posts");
       } else {
