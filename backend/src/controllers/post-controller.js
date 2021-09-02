@@ -16,7 +16,6 @@ exports.getByName = async (req, res) => {
 };
 
 exports.post = async (req, res) => {
-  console.log(req.body.petid);
   res.json(
     await postService.add(
       new Post(
