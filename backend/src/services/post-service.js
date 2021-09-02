@@ -1,4 +1,4 @@
-const postRepo = require("../repositories/post-repository")
+const postRepo = require("../repositories/post-repository");
 
 class PostService {
   add(post) {
@@ -10,7 +10,7 @@ class PostService {
   }
 
   getById(id) {
-    return postRepo.findOne(id);
+    return postRepo.findById(id);
   }
 
   getByRace(name) {
