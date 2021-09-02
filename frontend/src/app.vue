@@ -44,7 +44,7 @@ export default {
     },
     signOutHandler(event) {
       this.session = null;
-      this.$router.push("/home")
+      this.$router.push("/home");
     },
     toggleSidebarHandler() {
       this.showSidebar = !this.showSidebar;
@@ -56,4 +56,4 @@ export default {
 };
 </script>
 
-<style src="@/styles/base.scss" lang="scss"></style>
+<style src="./styles/base.scss" lang="scss" scoped></style>

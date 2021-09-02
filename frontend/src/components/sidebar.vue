@@ -47,6 +47,11 @@ export default {
           url: "/employee/add",
           show: ShowType.ADMIN,
         },
+        {
+          title: "Ver posts",
+          url: "/posts",
+          show: ShowType.SIGNED,
+        },
       ],
     };
   },

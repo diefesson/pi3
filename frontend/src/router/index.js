@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home.vue'
 import CadastroFuncionario from '../views/cadastro-funcionario.vue'
 import CadastroPet from '../views/cadastro-pet.vue'
-import PostList from "../views/post-list.vue"
+import Posts from "../views/posts.vue"
+import ViewPost from "../views/view-post.vue"
 
 const routes = [
   {
@@ -24,9 +25,19 @@ const routes = [
     component: CadastroFuncionario
   },
   {
-    path: "/post",
-    name: "PostList",
-    component: PostList
+    path: "/posts",
+    name: "Posts",
+    component: Posts
+  },
+  {
+    path: "/posts/new",
+    name: "ViewPost",
+    component: ViewPost
+  },
+  {
+    path: "/posts/:id",
+    name: "ViewPost",
+    component: ViewPost
   }
 ]
 

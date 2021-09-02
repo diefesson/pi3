@@ -19,7 +19,7 @@ export default {
   props: ["post"],
   methods: {
     modifyClickHandler() {
-      this.$router.push("/modify/" + this.post.id);
+      this.$router.push("/posts/" + this.post.id);
     },
     async removeClickHandler() {
       const result = await postService.remove(this.post.id);
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 @use "../styles/base.scss";
 
 .post-item {

@@ -11,7 +11,7 @@ import postService from "../services/post-service";
 import PostItem from "../components/post-item.vue";
 
 export default {
-  name: "PostList",
+  name: "Posts",
   data() {
     return {
       posts: [],
