@@ -1,7 +1,7 @@
 class Post {
-  constructor(title, content, imgUrl,ongId,petid) {
+  constructor(title, description, imgUrl, ongId, petid) {
     this.title = title;
-    this.content = content;
+    this.description = description;
     this.imgUrl = imgUrl;
     this.ongid = ongId;
     this.petid = petid;
