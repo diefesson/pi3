@@ -27,6 +27,7 @@ import Topbar from "./components/topbar.vue";
 import Sidebar from "./components/sidebar.vue";
 import ModalContainer from "./components/modal-container.vue";
 import ModalSignIn from "./components/modal-sign-in.vue";
+import userService from './services/user-service';
 
 export default {
   name: "App",
@@ -44,6 +45,7 @@ export default {
     },
     signOutHandler(event) {
       this.session = null;
+      userService.clearSession()
       this.$router.push("/home");
     },
     toggleSidebarHandler() {
@@ -53,6 +55,9 @@ export default {
       this.showSignIn = !this.showSignIn;
     },
   },
+  mounted(){
+    this.session = userService.getSession()
+  }
 };
 </script>
 
