@@ -5,7 +5,7 @@ import { success, error } from "../errors/result"
 const DEFAULT_CONFIG = {
     // cors is misconfigured on backend
     // so withCredentials cannot be used
-    // withCredentials: true
+     withCredentials: true
 }
 
 async function processResponse(responsePromise) {

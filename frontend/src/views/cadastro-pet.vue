@@ -43,7 +43,7 @@
 
 <script>
 import petService from "../services/pet-service";
-// import userService from "../services/user-service"
+import userService from '../services/user-service';
 
 export default {
 
@@ -67,7 +67,7 @@ export default {
                     this.age,
                     this.sex,
                     1, // Status
-                    1 // OngId
+                    userService.getSession().ongid // OngId
                 );
                 this.$router.push("/pet/list");
             } catch (e) {

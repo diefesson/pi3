@@ -72,7 +72,7 @@ export default {
         if (result.isSuccess()) {
           this.$router.push("/posts");
         } else {
-          console.log(result.error);
+          console.error(result.error);
         }
       }
     },

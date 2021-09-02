@@ -70,7 +70,7 @@ export default {
       var types = [ShowType.UNSIGNED];
       if (this.session != null) {
         types += ShowType.SIGNED;
-        if (this.session.isAdmin) {
+        if (this.session.isadmin) {
           types += ShowType.ADMIN;
         }
       }

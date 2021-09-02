@@ -18,16 +18,20 @@ const app = express();
 
 app.use(cookieParser());
 app.use(
-    sessions({
-        secret: process.env.SECRET,
-        saveUninitialized: true,
-        resave: false
-    })
+  sessions({
+    secret: process.env.SECRET,
+    saveUninitialized: true,
+    resave: false
+  })
 )
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  allowedHeaders: ["Cookie", "Content-Type"],
+  origin: "http://localhost:8080",
+  credentials: true,
+}));
 app.use(urlencoded({ extended: true }));
 app.use("/pets", PetRouter);
 app.use("/posts", PostRouter);

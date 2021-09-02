@@ -44,6 +44,7 @@
 
 <script>
 import axios from 'axios'
+import userService from '../services/user-service';
 
 export default {
     name: "EditarPet",
@@ -75,7 +76,7 @@ export default {
                 age: this.age,
                 sex: this.sex,
                 status: 1,
-                ongid: this.ongid,
+                ongid: userService.getSession().ongid,
             }
             axios.put(this.basePets + "/" + this.id, obj).then((result) => {
                 this.$router.push("/pet/list");
