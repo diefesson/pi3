@@ -43,8 +43,10 @@
 
 <script>
 import petService from "../services/pet-service";
+// import userService from "../services/user-service"
 
 export default {
+
     name: "CadastroPet",
     data() {
         return {
@@ -58,13 +60,14 @@ export default {
     methods: {
         async cadastroPetClickHandler() {
             try {
+                // this.ongId = userService.getSession().ongid
                 await petService.cadastrarPet(
                     this.title,
                     this.race,
                     this.age,
                     this.sex,
-                    1,
-                    1
+                    1, // Status
+                    1 // OngId
                 );
                 this.$router.push("/pet/list");
             } catch (e) {

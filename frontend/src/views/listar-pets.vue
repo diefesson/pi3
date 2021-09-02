@@ -20,8 +20,8 @@
                                 <span class="span-dados">{{ verificarSexo(pet.sex) }}</span>
                             </div>
                             <div class="botoes">
-                                <button class="botao-ver" @click="verPet">Ver</button>
-                                <button class="botao-editar" @click="putPet">Editar</button>
+                                <button class="botao-ver" @click="verPet(pet)">Ver</button>
+                                <button class="botao-editar" @click="putPet(pet)">Editar</button>
                             </div>
                         </div>
                     </div>
@@ -44,11 +44,19 @@ export default {
         }
     },
     methods: {
-        putPet() {
+        putPet(petEscolhido) {
+            let petEditar = localStorage.getItem('petApp');
+
+            petEditar = [petEscolhido]
+            localStorage.setItem('petApp', JSON.stringify(petEditar));
             this.$router.push("/pet/edit");
         },
 
-        verPet() {
+        verPet(petEscolhido) {
+            let petEditar = localStorage.getItem('petApp');
+
+            petEditar = [petEscolhido]
+            localStorage.setItem('petApp', JSON.stringify(petEditar));
             this.$router.push("/pet/view");
         },
 
@@ -77,7 +85,6 @@ export default {
     mounted() {
         axios.get(this.basePets).then((result) => { 
             this.petsList = result.data;
-            console.log(this.petsList);
         }); 
     },
 }

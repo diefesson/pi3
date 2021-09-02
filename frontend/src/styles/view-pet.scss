@@ -54,7 +54,24 @@
         font-family: base.$font-body;
         font-weight: bold;
     }
+
+    .contato {
+        margin-top: 120px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
     
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
     .description {
         margin-top: 1.5%;
         width: 61rem;
@@ -160,6 +177,23 @@
     
     .span-info {
         font-family: base.$font-body;
+        font-weight: bold;
+    }
+
+    .contato {
+        margin-top: 60px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
         font-weight: bold;
     }
     
@@ -271,6 +305,23 @@
         font-weight: bold;
     }
     
+    .contato {
+        margin-top: 20px;
+        display: block;
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .contato-info {
+        font-family: base.$font-body;
+        line-height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
     .description {
         margin-top: 1.5%;
         width: 17rem;
