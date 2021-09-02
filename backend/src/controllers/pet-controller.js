@@ -34,7 +34,8 @@ exports.post = async (req, res) => {
       req.body.age,
       req.body.sex,
       req.body.status,
-      req.body.ongid
+      req.body.ongid,
+      req.body.title
     )
   );
   if (!value) res.send({ success: false });
@@ -52,7 +53,8 @@ exports.put = async (req, res) => {
         req.body.age,
         req.body.sex,
         req.body.status,
-        req.body.ongid
+        req.body.ongid,
+        req.body.title
       )
     )
   );
