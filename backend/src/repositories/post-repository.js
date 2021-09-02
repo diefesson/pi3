@@ -2,7 +2,7 @@ const pool = require("../dbs/postgres");
 
 exports.findAll = async () => {
   const resul = await pool.query(
-    "SELECT posts.id,posts.description,posts.imgurl,posts.petid,ongs.name FROM posts,ongs WHERE posts.ongid = ongs.id;"
+    "SELECT posts.id,posts.title, posts.description,posts.imgurl,posts.petid,ongs.name FROM posts,ongs WHERE posts.ongid = ongs.id;"
   );
   return resul.rows.map(postMapper);
 };
@@ -10,6 +10,7 @@ exports.findAll = async () => {
 function postMapper(row) {
   return {
     id: row.id,
+    title: row.title,
     description: row.description,
     imgurl: row.imgurl,
     petid: row.petid,
@@ -21,7 +22,7 @@ function postMapper(row) {
 
 exports.findById = async (id) => {
   const resul = await pool.query(
-    "SELECT posts.id,posts.description,posts.imgurl,posts.petid,ongs.name FROM posts,ongs WHERE posts.id=$1 AND posts.ongid = ongs.id;",
+    "SELECT posts.id, posts.title, posts.description,posts.imgurl,posts.petid,ongs.name FROM posts,ongs WHERE posts.id=$1 AND posts.ongid = ongs.id;",
     [id]
   );
   return resul.rows.map(postMapper);
@@ -37,7 +38,7 @@ exports.save = async (post) => {
 
 exports.update = async (id, post) => {
   const result = await pool.query(
-    "UPDATE posts SET title=$1,description=$2, img=$3, ongid=$4,petid=$5 WHERE id=$6 RETURNING *;",
+    "UPDATE posts SET title=$1,description=$2, imgurl=$3, ongid=$4,petid=$5 WHERE id=$6 RETURNING *;",
     [post.title, post.description, post.imgurl, post.ongid, post.petid, id]
   );
   return result.rows[0];
