@@ -7,13 +7,9 @@ exports.post = async (req, res) => {
     session = req.session;
     session.user = 1;
     res.send({
-      success: true
+      success: true,
+      user: value
     })
-    res.status(200)
-  .cookie("username", value, {
-    secure: false
-  })
-  
 }
   if(!value)
   res.send({
