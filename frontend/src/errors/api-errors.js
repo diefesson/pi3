@@ -9,7 +9,7 @@ export class APIError extends DomainError {
 
 export class NoResponseError extends APIError {
     constructor(request) {
-        super("no response", request)
+        super("sem resposta do servidor", request)
     }
 }
 

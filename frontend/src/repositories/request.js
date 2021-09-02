@@ -1,5 +1,5 @@
 import axios from "axios";
-import { processAPIError } from "../errors/errors";
+import { processAPIError } from "../errors/api-errors";
 import { success, error } from "../errors/result"
 
 const DEFAULT_CONFIG = {
