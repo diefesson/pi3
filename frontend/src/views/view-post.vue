@@ -2,7 +2,7 @@
   <div class="post-form">
     <div>
       <div class="image-input" v-on:click="removeImageHandler">
-        <input type="file" v-on:change="selectImageHandler" ref="imageInput" />
+        <input type="file" accept="image/*" v-on:change="selectImageHandler" ref="imageInput" />
         <img v-if="image" v-bind:src="image" />
         <span v-else>SELECIONAR IMAGEM</span>
       </div>
