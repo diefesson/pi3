@@ -1,4 +1,4 @@
-import imageRepository from "../repositories/data-url-image-repository"
+import imageRepository from "../repositories/image-repository"
 
 async function add(file) {
     return await imageRepository.add(file)
