@@ -10,9 +10,9 @@ const uploadController = require('../controllers/upload-images');
 const router = express.Router();
 
 aws.config.update({
-  accessKeyId: "AKIARU2CZKWLC7WON6GS",
-  secretAccessKey: "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",
-  region: "sa-east-1",
+  accessKeyId: "",
+  secretAccessKey: "",
+  region: "",
 });
 
 const s3 = new aws.S3();
