@@ -19,7 +19,7 @@ class PostService {
   }
 
   update(id, post) {
-    return petRepo.update(id, post);
+    return postRepo.update(id, post);
   }
 
   delete(id) {

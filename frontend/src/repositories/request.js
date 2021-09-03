@@ -5,39 +5,47 @@ import { success, error } from "../errors/result"
 const DEFAULT_CONFIG = {
     // cors is misconfigured on backend
     // so withCredentials cannot be used
-     withCredentials: true
+    withCredentials: true
 }
 
-async function processResponse(responsePromise) {
+async function processResponse(responsePromise, mapper) {
     try {
-        return success((await responsePromise).data)
+        let data = (await responsePromise).data
+        if (mapper != null) {
+            data = mapper(data)
+        }
+        return success(data)
     } catch (e) {
         return error(processAPIError(e))
     }
 }
 
 export default {
-    get: async (url, config = {}) => {
+    get: async (url, config = {}, mapper = null) => {
         return processResponse(
-            axios.get(url, { ...DEFAULT_CONFIG, ...config })
+            axios.get(url, { ...DEFAULT_CONFIG, ...config }),
+            mapper
         )
     },
 
-    post: async (url, data, config = {}) => {
+    post: async (url, data, config = {}, mapper) => {
         return processResponse(
-            axios.post(url, data, { ...DEFAULT_CONFIG, ...config })
+            axios.post(url, data, { ...DEFAULT_CONFIG, ...config }),
+            mapper
         )
     },
 
-    put: async (url, data, config = {}) => {
+    put: async (url, data, config = {}, mapper) => {
         return processResponse(
-            axios.put(url, data, { ...DEFAULT_CONFIG, ...config })
+            axios.put(url, data, { ...DEFAULT_CONFIG, ...config }),
+            mapper
         )
     },
 
-    delete: async (url, config = {}) => {
+    delete: async (url, config = {}, mapper) => {
         return processResponse(
-            axios.delete(url, { ...DEFAULT_CONFIG, ...config })
+            axios.delete(url, { ...DEFAULT_CONFIG, ...config }),
+            mapper
         )
     },
 }

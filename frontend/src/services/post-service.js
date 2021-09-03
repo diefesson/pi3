@@ -1,4 +1,4 @@
-import postRepository from "../repositories/mock-post-repository";
+import postRepository from "../repositories/post-repository";
 
 async function findAll() {
     return await postRepository.findAll()

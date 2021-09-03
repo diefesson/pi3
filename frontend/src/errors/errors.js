@@ -5,7 +5,6 @@ export class DomainError {
     }
 }
 
-// TODO: backend yet does not give sufficent info to use more specific errors
 export class IncorrectCredentialsError extends DomainError {
     constructor() {
         super("nome de usuário ou senha incorretos")
