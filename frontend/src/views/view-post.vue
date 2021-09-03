@@ -2,7 +2,12 @@
   <div class="post-form">
     <div>
       <div class="image-input" v-on:click="removeImageHandler">
-        <input type="file" accept="image/*" v-on:change="selectImageHandler" ref="imageInput" />
+        <input
+          type="file"
+          accept="image/*"
+          v-on:change="selectImageHandler"
+          ref="imageInput"
+        />
         <img v-if="image" v-bind:src="image" />
         <span v-else>SELECIONAR IMAGEM</span>
       </div>
@@ -23,6 +28,7 @@
 import postService from "../services/post-service";
 import imageService from "../services/image-service";
 import postSchema from "../validation/post-schema";
+import userRepository from "../repositories/user-repository";
 
 export default {
   name: "ViewPost",
@@ -58,7 +64,9 @@ export default {
         title: this.title,
         description: this.description,
         image: this.image,
+        org: { id: userRepository.getSession().ongid },
       };
+
       const validation = postSchema.validate(post);
       if (validation.error) {
         this.alertValidation(validation);
@@ -87,6 +95,9 @@ export default {
           break;
         case "image":
           this.alert = "Uma imagem deve ser selecionada";
+          break;
+        default:
+          console.error("validation error for field: " + field);
           break;
       }
     },
@@ -195,7 +206,7 @@ $image-size: 250px;
   box-sizing: border-box;
 }
 
-.alert{
+.alert {
   color: base.$color-status-error;
 }
 </style>

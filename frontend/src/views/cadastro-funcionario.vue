@@ -97,7 +97,6 @@ export default {
           this.email,
           this.orgId
         );
-        console.log("após service")// TODO: remove me
         this.$router.push("/home");
       } catch (e) {
         alert(e.message);
